@@ -5,7 +5,7 @@
 - No offline raiding. Show a current screenshot that proves at least **40%** of the defending clan's **active** members are online (e.g. 4 of 10). Members inactive for two weeks were excluded from the legacy percentage calculation; SOLACE's membership removal now occurs after **three weeks**, so staff must distinguish calculation activity from clan-removal status.
 - Have a clear IC objective: e.g. recover a captive, breach a rival's fort or confront an enemy leader.
 - Open a **Raid Ticket** naming the defending clan, attacker clan, any attacker allies, and the objective.
-- An uninvolved staff observer must approve and supervise. Once approved, both sides receive **30 minutes' warning**; this conveys only the IC knowledge of an approaching unknown force to the defenders, not a free OOC alarm to all neighbors.
+- An uninvolved staff observer must approve and supervise. Once approved, both sides receive **1 hour's warning**; this conveys only the IC knowledge of an approaching unknown force to the defenders, not a free OOC alarm to all neighbors.
 - Scheduling follows staff coverage; the old rules prioritize **18:00–00:00 EST** but SOLACE must publish the actual moderation window and timezone. Raids at unreasonable off-hours for the target population may be declined. **[CONFIRM BEFORE LAUNCH: staff timezone/coverage.]**
 
 ## During the raid
