@@ -1372,6 +1372,7 @@ class Component extends DCLogic {
       const a = window.__solaceAudio;
       this.track = a._solaceTrack || 0;
       const playing = !a.paused;
+      this._userPaused = !!a._solaceUserPaused;
       this.setState({ vol: a.volume, muted: a.muted, musicReady: true, playing: playing, track: this.track });
       a._solaceComp = this;
       return;
@@ -1444,7 +1445,7 @@ class Component extends DCLogic {
       this.setState({ pages, loaded: true }, () => { this.scrollNow(false); setTimeout(() => this.scrollNow(false), 400); });
     });
   }
-  componentWillUnmount() { try { this._userPaused = true; ['pointerdown', 'keydown'].forEach(e => this._kick && window.removeEventListener(e, this._kick)); } catch (e) {} clearInterval(this.heroTimer); window.removeEventListener('hashchange', this.onHash); window.removeEventListener('resize', this.onResize); window.removeEventListener('keydown', this.onKey); document.removeEventListener('visibilitychange', this._onVisibility); }
+  componentWillUnmount() { try { ['pointerdown', 'keydown'].forEach(e => this._kick && window.removeEventListener(e, this._kick)); } catch (e) {} clearInterval(this.heroTimer); window.removeEventListener('hashchange', this.onHash); window.removeEventListener('resize', this.onResize); window.removeEventListener('keydown', this.onKey); document.removeEventListener('visibilitychange', this._onVisibility); }
   scrollNow(routeChanged) {
     setTimeout(() => {
       const id = this.state.s, el = id && document.getElementById(id);
@@ -1587,7 +1588,7 @@ class Component extends DCLogic {
       trackNo: (st.track || 0) + 1, audioRef: this.audioRef, musicReady: !!st.musicReady, musicOpacity: st.playing ? 0.72 : 1,
       musicStatus: st.playing ? 'NOW PLAYING' : 'PAUSED', playIcon: st.playing ? '\u275A\u275A' : '\u25B6\uFE0E', playLabel: st.playing ? 'Pause music' : 'Play music',
       muteIcon: muted ? '\u2715' : '\u266A', muteLabel: muted ? 'Unmute' : 'Mute', volumePct: Math.round((st.muted ? 0 : vol) * 100),
-      togglePlay: () => { if (!au) return; if (au.paused) { this._userPaused = false; au.play().catch(() => {}); } else { this._userPaused = true; au.pause(); } },
+      togglePlay: () => { if (!au) return; if (au.paused) { this._userPaused = false; au._solaceUserPaused = false; au.play().catch(() => {}); } else { this._userPaused = true; au._solaceUserPaused = true; au.pause(); } },
       toggleMute: () => { if (!au) return; const m = !st.muted; au.muted = m; if (!m && vol === 0) { au.volume = 0.12; this.setState({ vol: 0.12 }); } this.setState({ muted: m }, () => this.saveMusic()); },
       setVolume: (e) => { if (!au) return; const v = Number(e.target.value) / 100; au.volume = v; au.muted = v === 0; this.setState({ vol: v, muted: v === 0 }, () => this.saveMusic()); },
       heroSlides: this.HERO.map((h, i) => { const on = i === st.hero; return { src: h[0], pos: h[1], label: 'Show image ' + (i + 1) + ': ' + h[2], opacity: on ? 1 : 0, scale: on ? 1.04 : 1, dot: on ? '#C2A05A' : 'rgba(237,237,237,0.35)', pick: () => { this.setState({ hero: i }); clearInterval(this.heroTimer); this.heroTimer = setInterval(() => { if (this.state.route === '/' && !document.hidden) this.setState(s => ({ hero: (s.hero + 1) % this.HERO.length })); }, 7000); } }; }),
