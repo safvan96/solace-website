@@ -79,7 +79,7 @@ a:hover{color:#EDEDED}
       <sc-if value="{{ searchLabel }}" hint-placeholder-val="{{ true }}"><span style="white-space:nowrap">Search rules, classes…</span><kbd style="font-family:'IBM Plex Mono',monospace;font-size:12px;border:1px solid rgba(237,237,237,0.2);border-radius:3px;padding:0 6px;color:#9C9C9C">/</kbd></sc-if>
     </button>
     <sc-if value="{{ xwide }}" hint-placeholder-val="{{ true }}">
-      <span title="Official Discord invite not provided yet" style="display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;line-height:1.35;border:1px dashed rgba(237,237,237,0.3);border-radius:5px;font-size:14.5px;color:#9C9C9C;white-space:nowrap">Discord · link pending</span>
+      <a href="#" title="Discord (link coming soon)" aria-label="Discord" style="display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:6px 12px;line-height:1.35;border:1px solid rgba(237,237,237,0.3);border-radius:5px;color:#EDEDED;text-decoration:none;font-weight:600;flex-shrink:0" style-hover="border-color:#5865F2;color:#EDEDED"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M20.32 4.37A19.8 19.8 0 0 0 15.4 2.85a13.7 13.7 0 0 0-.63 1.29 18.4 18.4 0 0 0-5.53 0 13 13 0 0 0-.64-1.29 19.7 19.7 0 0 0-4.92 1.53C.56 9.04-.28 13.58.14 18.06a19.9 19.9 0 0 0 6.03 3.05 14.7 14.7 0 0 0 1.29-2.1 12.9 12.9 0 0 1-2.03-.97c.17-.12.34-.25.5-.38a14.2 14.2 0 0 0 12.14 0c.16.13.33.26.5.38-.65.38-1.33.71-2.03.97.37.74.8 1.44 1.29 2.1a19.8 19.8 0 0 0 6.03-3.05c.5-5.19-.84-9.69-3.54-13.69ZM8.02 15.31c-1.18 0-2.16-1.09-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.1 2.16 2.42c0 1.33-.95 2.42-2.16 2.42Zm7.96 0c-1.18 0-2.16-1.09-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.1 2.16 2.42c0 1.33-.94 2.42-2.16 2.42Z"/></svg></a>
     </sc-if>
     <sc-if value="{{ narrowNav }}" hint-placeholder-val="{{ false }}">
       <button onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" style="height:44px;padding:0 14px;background:transparent;border:1px solid rgba(237,237,237,0.2);border-radius:5px;color:#EDEDED;font:inherit;font-size:15px;cursor:pointer">{{ menuLabel }}</button>
@@ -210,7 +210,7 @@ a:hover{color:#EDEDED}
           <span style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Montserrat',system-ui,sans-serif;font-size:21px;line-height:1.25">{{ p.name }}</span><span style="color:#9C9C9C;font-size:15.5px;line-height:1.5">{{ p.line }}</span></span>
         </a>
       </sc-for>
-      <a href="#/classes" style="background:#131313;padding:24px 22px;text-decoration:none;color:#EDEDED;display:flex;flex-direction:column;gap:6px" style-hover="background:#1A1A1A;color:#EDEDED">
+      <a href="#/classes" style="grid-column:span 2;background:#131313;padding:24px 22px;text-decoration:none;color:#EDEDED;display:flex;flex-direction:column;justify-content:center;gap:6px" style-hover="background:#1A1A1A;color:#EDEDED">
         <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#C2A05A">THREE SPECIAL CLASSES</span>
         <span style="font-family:'Montserrat',system-ui,sans-serif;font-size:21px;line-height:1.25">Sorcerer, Blacksmith &amp; Wise</span>
         <span style="color:#9C9C9C;font-size:15.5px;line-height:1.5">Specializations you develop through quests and play.</span>
@@ -257,8 +257,8 @@ a:hover{color:#EDEDED}
       <h2 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:400;font-size:clamp(34px,4.4vw,58px);line-height:1.08;margin:0;max-width:18ch;text-wrap:balance">A world shaped by the people who live in it.</h2>
       <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
         <a href="#/start" style="display:inline-flex;align-items:center;height:52px;padding:0 26px;background:#C2A05A;color:#080808;border-radius:5px;text-decoration:none;font-weight:600" style-hover="background:#D1B26F;color:#080808">Start Here</a>
-        <span title="Official Discord invite not provided yet" style="display:inline-flex;align-items:center;min-height:52px;padding:6px 22px;line-height:1.35;border:1px dashed rgba(237,237,237,0.3);border-radius:5px;color:#9C9C9C">Discord · link pending</span>
-        <span title="Server address published after hosting is active" style="display:inline-flex;align-items:center;min-height:52px;padding:6px 22px;line-height:1.35;border:1px dashed rgba(237,237,237,0.3);border-radius:5px;color:#9C9C9C">Server address · pending</span>
+        <a href="#" title="Discord (link coming soon)" aria-label="Discord" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:6px 22px;line-height:1.35;border:1px solid rgba(237,237,237,0.3);border-radius:5px;color:#EDEDED;text-decoration:none;font-weight:600;flex-shrink:0" style-hover="border-color:#5865F2;color:#EDEDED"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M20.32 4.37A19.8 19.8 0 0 0 15.4 2.85a13.7 13.7 0 0 0-.63 1.29 18.4 18.4 0 0 0-5.53 0 13 13 0 0 0-.64-1.29 19.7 19.7 0 0 0-4.92 1.53C.56 9.04-.28 13.58.14 18.06a19.9 19.9 0 0 0 6.03 3.05 14.7 14.7 0 0 0 1.29-2.1 12.9 12.9 0 0 1-2.03-.97c.17-.12.34-.25.5-.38a14.2 14.2 0 0 0 12.14 0c.16.13.33.26.5.38-.65.38-1.33.71-2.03.97.37.74.8 1.44 1.29 2.1a19.8 19.8 0 0 0 6.03-3.05c.5-5.19-.84-9.69-3.54-13.69ZM8.02 15.31c-1.18 0-2.16-1.09-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.1 2.16 2.42c0 1.33-.95 2.42-2.16 2.42Zm7.96 0c-1.18 0-2.16-1.09-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.1 2.16 2.42c0 1.33-.94 2.42-2.16 2.42Z"/></svg>Discord</a>
+        <a href="#" title="Steam Workshop collection (link coming soon)" aria-label="Steam Workshop collection" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:6px 22px;line-height:1.35;border:1px solid rgba(237,237,237,0.3);border-radius:5px;color:#EDEDED;text-decoration:none;font-weight:600" style-hover="border-color:#C2A05A;color:#EDEDED"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-9.96 9.04l5.35 2.21a2.83 2.83 0 0 1 1.6-.49h.16l2.38-3.45v-.05a3.77 3.77 0 1 1 3.77 3.77h-.09l-3.4 2.42v.13a2.83 2.83 0 0 1-5.61.55L2.38 14.6A10 10 0 1 0 12 2Zm-4.7 15.17-1.23-.51a2.13 2.13 0 1 0 1.17-2.91l1.27.53a1.57 1.57 0 1 1-1.21 2.89Zm9.81-7.92a2.51 2.51 0 1 0-2.51 2.51 2.51 2.51 0 0 0 2.51-2.51Zm-4.4 0a1.89 1.89 0 1 1 1.89 1.89 1.89 1.89 0 0 1-1.89-1.89Z"/></svg>Steam Collection</a>
       </div>
     </div>
   </section>
@@ -1881,9 +1881,9 @@ class Component extends DCLogic {
     try { const c = JSON.parse(localStorage.getItem('solace-checklist-v1') || '{}'); this.setState({ checked: c }); } catch (e) {}
     this.onHash = () => this.readHash(); window.addEventListener('hashchange', this.onHash); this.readHash();
     this.heroTimer = setInterval(() => { if (this.state.route === '/' && !document.hidden) this.setState(s => ({ hero: (s.hero + 1) % this.HERO.length })); }, 7000);
+    this.onResize = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this.onResize);
     this._onVisibility = () => { const a = window.__solaceAudio; if (!a || this._userPaused) return; if (document.hidden) { this._wasPlaying = !a.paused; a.pause(); } else if (this._wasPlaying) { a.play().catch(() => {}); } };
     document.addEventListener('visibilitychange', this._onVisibility);
-    this.onResize = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this.onResize);
     this.onKey = (e) => {
       const tag = (e.target && e.target.tagName) || '';
       const typing = tag === 'INPUT' || tag === 'TEXTAREA';
