@@ -1387,9 +1387,9 @@ class Component extends DCLogic {
     const tryPlay = () => a.play().then(() => true).catch(() => false);
     tryPlay().then(ok => {
       if (ok) return;
-      const kick = (ev) => { ['pointerdown', 'keydown'].forEach(e => window.removeEventListener(e, kick)); if (ev && ev.target && ev.target.closest && ev.target.closest('[aria-label="Background music"]')) return; if (!this._userPaused) tryPlay(); };
+      const kick = (ev) => { ['pointerdown', 'keydown', 'mousemove', 'touchstart', 'scroll'].forEach(e => window.removeEventListener(e, kick)); if (ev && ev.target && ev.target.closest && ev.target.closest('[aria-label="Background music"]')) return; if (!this._userPaused) tryPlay(); };
       this._kick = kick;
-      ['pointerdown', 'keydown'].forEach(e => window.addEventListener(e, kick));
+      ['pointerdown', 'keydown', 'mousemove', 'touchstart', 'scroll'].forEach(e => window.addEventListener(e, kick, { once: true }));
     });
   }
   saveMusic() { try { localStorage.setItem('solace-music-v2', JSON.stringify({ v: this.state.vol, m: this.state.muted })); } catch (e) {} }
