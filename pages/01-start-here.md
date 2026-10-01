@@ -17,7 +17,7 @@
 - [ ] Character has a plausible name, origin, motivation and adult age.
 - [ ] Read IC/OOC, metagaming, recordings and consent rules.
 - [ ] Know how to initiate, join or surrender in PvP.
-- [ ] Chosen a first profession; read any class application requirements separately.
+- [ ] Chosen a profession. Characters with a Class must also have one.
 - [ ] Asked staff if a custom lore element or prohibited build area is unclear.
 
 ## Quick questions

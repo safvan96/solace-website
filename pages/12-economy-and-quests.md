@@ -1,28 +1,103 @@
 # Economy, Crafting & Quests
 *A coin is more interesting when it changes hands.*
 
-## Confirmed recurring rewards
-| Reward | Amount |
-|---|---:|
-| **Daily Reward** | **10 Silver** |
-| **Weekly Reward** | **1 Gold** |
+## Daily & Weekly Quests
+| Quest | Reward |
+|---|---|
+| **Daily Quests (2)** | **10 Silver total** |
+| **Weekly Quest** | **100 Silver or 1 Gold** |
 
-**Do not assume an exchange rate** between Silver and Gold until the actual SOLACE economy config is published. A 'daily quest' discussed in meeting notes is not automatically an extra 10 Silver on top of the daily reward.
+### Daily Quests
+There are two daily quests. Together they give **10 Silver**.
 
-## The Hub market
-All player markets belong in the **Hub**. Market Thespians are limited to **one per clan**, and cannot be used as invulnerable banks or forbidden-item exchanges. Social trade can still take place between characters, but permanent player market placements are Hub-only. The Hub sells the **Feast Ring for 1 Gold** as an alternative to sourcing one from a Blacksmith.
+| Daily quest | Requirement | Reward |
+|---|---|---|
+| **Hub Duty** | Work a 1-hour Profession Work shift in the Hub (City Guard Duty or Tavern Work) and roleplay during it. | 5 Silver |
+| **Shard Hunt** | Collect 5 Shards by defeating the 5 special bosses. | 5 Silver |
 
-## Blacksmith's role in trade
-Blacksmith crafts Master Weapon Fittings, Agony-like special gear and durable Feast Rings. A Blacksmith may craft **one Feast Ring per week**. Player-negotiated fees can make repair and special production meaningful services. [CONFIRM BEFORE LAUNCH: all recipes, other-item cooldowns, ring durability and repairs.]
+### Weekly Quest requirement
+The Weekly Quest requires the player to collect **30 Shards**.
+- Shards are obtained by defeating the **5 special bosses** located around the map.
+- Players may repeatedly hunt these bosses until they have collected the required 30 Shards.
 
-## Profession work: planned
-Meetings explored one-hour Hub shifts themed around Bard, Medic, Fighter, Bounty Hunter, Alchemist and Thief, with profession-aligned payouts. The Slaver's safe, consent-based progression must not automatically turn Hub shifts into captive procurement. **Do not advertise shift amounts or daily farming limits until approved.**
+## Profession Work
+Profession work gives characters a way to earn money through active roleplay inside the Hub. This is the **Hub Duty** daily quest: a 1-hour shift with RP earns **5 Silver**.
 
-## Weekly boss quest: proposed, not confirmed
-An additional short meeting discussed **five special bosses**, collecting a **Shard** drop, and roughly **15–20-minute** respawn. Those notes do not settle who receives loot, whether bosses are personal/shared, the reward amount, or whether Shard is the final item name. Present this as a 'Coming to the world' teaser only, never a current guarantee.
+### City Guard Duty
+The following professions may take City Guard Duty:
+- Fighter
+- Slaver
+- Thief
+
+During the shift, they patrol the Hub for 1 hour and are paid for protecting the city.
+
+### Tavern Work
+All other professions may work in the Hub Tavern:
+- Bard
+- Bounty Hunter
+- Medic
+- Alchemist
+- Courtier
+
+During the shift, they help out the tavern keeper and are free to roleplay however they like. The shift must last **1 hour**.
+
+### Medic Work
+Medics may earn money by offering healing services through RP, as well as through Tavern Work.
+
+Before starting treatment, the Medic must clearly state the price of the service to the patient.
+- The price must be agreed, or at least clearly stated, before the healing RP begins.
+- Once the treatment has been completed, the Medic may not introduce a new price afterward.
+- A Medic cannot finish the healing first and then demand payment that was never mentioned beforehand.
+
+Inside the Medic building, Medics may advertise their availability with an IC announcement such as *"A healer is available."* or *"I am a healer and I am now taking patients."*
+
+## Hub Market
+The Hub sells several special items directly.
+
+| Item | Effect | Price |
+|---|---|---|
+| **Amulet of Solace** | +15 Strength, +15 Agility | 10 Gold |
+| **Talisman of Solace** | +40 Health, +40 Stamina | 10 Gold |
+| **Feast Ring** | Use/carry up to 1,000 Feast items without weight burden. Breaks after 1,000 uses. | 1 Gold |
+| **Legendary Weapon Fitting** | Increases Weapon Damage and Armor Penetration. | 1 Gold |
+| **Legendary Spike Weapon Fitting** | Increases Armor Penetration. | 1 Gold |
+| **Legendary Armor Fitting** | Increases Armor Points. | 1 Gold |
+
+All player markets belong in the **Hub**. Market Thespians are limited to **one per clan**, and cannot be used as invulnerable banks or forbidden-item exchanges. Social trade can still take place between characters, but permanent player market placements are Hub-only.
+
+### Feast Ring
+The Feast Ring allows its wearer to use up to 1,000 Feast items without carrying their normal weight.
+- **Durability:** 1,000 uses. After 1,000 uses, the ring breaks.
+- **Hub price:** 1 Gold
+- Can also be crafted by a Blacksmith.
+
+### Legendary Weapon Fitting
+A high-grade fitting designed to increase a weapon's overall offensive power.
+- Increased Weapon Damage
+- Increased Armor Penetration
+- **Hub price:** 1 Gold
+
+### Legendary Spike Weapon Fitting
+A specialized fitting designed to improve a weapon's ability to penetrate armor.
+- Increased Armor Penetration
+- **Hub price:** 1 Gold
+
+### Legendary Armor Fitting
+A reinforced fitting designed to increase the defensive value of armor.
+- Increased Armor Points
+- **Hub price:** 1 Gold
+
+### Amulet of Solace
+A powerful Hub-exclusive accessory.
+- +15 Strength
+- +15 Agility
+- **Hub price:** 10 Gold
+
+### Talisman of Solace
+A powerful Hub-exclusive accessory focused on survivability.
+- +40 Health
+- +40 Stamina
+- **Hub price:** 10 Gold
 
 ## Farming philosophy
 Routine Conan material farming should leave enough time for character-driven RP. The meetings discussed easier access to early build resources. This is a direction, **not** a promised server multiplier or a promise of endless free resources.
-
-## Support and donations
-Building-extension support was retained from the inherited rules by owner decision, but **the store, price, payment processor, eligibility and legal/platform permissions are not finalized**. Do not show a live payment button or sell game power before those checks are completed. Support cannot purchase staff decisions, override consent or change an IC outcome.

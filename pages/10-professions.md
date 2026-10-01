@@ -1,24 +1,24 @@
 # Professions
 *What does your character bring to the table?*
 
-Professions are a character's everyday specialty: a reason to meet others, offer a service, find employment and create RP. They are **not** the advanced progression tracks called Classes. SOLACE has **eight professions**. Each profession page lists every skill with its rules, limits and an example.
+Professions are a character's everyday specialty: a reason to meet others, offer a service, find employment and create RP. They are **not** the advanced progression tracks called Classes. Every character picks a Profession, including characters who also hold a Class. SOLACE has **eight professions**. Each profession page lists every skill with its rules, limits and an example.
 
 | Profession | In one sentence | Skills | Status |
 |---|---|---|---|
-| **Bard** | A performer who changes the mood of a room. | Performance, Inspire, Calm and Charm. | Confirmed; Inspire amount pending. |
-| **Bounty Hunter** | A professional tracker of people and leads. | Tracking, Staff Clues, Read Lies and Bounty Contracts. | Confirmed. |
+| **Bard** | A performer who changes the mood of a room. | Performance, Inspire and Charm. | Confirmed. |
+| **Bounty Hunter** | A professional tracker of people and leads. | Tracking, Read Lies and Bounty Contract. | Confirmed. |
 | **Medic** | Someone you want beside you after the fight. | Treat Injury, Faster Recovery and Revitalize. | Confirmed. |
-| **Fighter** | A character trained to endure physical conflict. | Endurance and Hard to Break. | Confirmed. |
-| **Thief** | Finds a way through doors and around trust. | Lockpicking, Theft and Deception. | Confirmed. |
+| **Fighter** | A character trained to endure physical conflict. | Endurance, Hard to Break and Battle Ready. | Confirmed. |
+| **Thief** | Finds a way through doors and around trust. | Lockpicking, Theft, Deception and Liar’s Perfume. | Confirmed. |
 | **Alchemist** | Turns ingredients into consequences. | Brewing six elixirs: Truth, Oblivion, Babbling, Submission, Restoration and Desire. | Confirmed. |
-| **Slaver** | A captor specializing in agreed enslavement RP. | Break Will, Truth Compulsion and Intimidation. | Confirmed; Broken effects pending. |
+| **Slaver** | A captor specializing in agreed enslavement RP. | Break Will, Truth Compulsion and Intimidation. | Confirmed. |
 | **Courtier** | A schemer and dealmaker who wins with words, letters and bargains. | Silver Tongue, Subterfuge and Merchant. | Confirmed. |
 
 ## Bard
-A tavern needs more than tables. Bards create performances, celebrations, rumours and social scenes. Their music can lift a crowd, calm a fight before it starts or win someone over, but it never takes away another player's choice.
+A tavern needs more than tables. Bards create performances, celebrations, rumours and social scenes. Their performance can calm a crowd, lift spirits with healing or win someone over, but it never takes away another player's choice.
 
 ## Bounty Hunter
-A professional tracker who works from IC evidence: tracks, witnesses, rumours and clues from staff. Contracts give the hunt a purpose, and a contracted target can be brought to a permadeath request after fewer encounters than usual. No map reveal and no OOC tracking, ever.
+A professional tracker who follows RP trails from POIs, forces the truth out of suspects and can hunt down characters who have piled up serious PK reasons. Tracking goes through a ticket; it never reveals an exact location.
 
 ## Medic
 Helps injured characters return to the world. Medics treat wounds after a fight, speed up recovery and restore a tired patient's strength. The people everyone wants nearby after a bad night.
@@ -27,16 +27,16 @@ Helps injured characters return to the world. Medics treat wounds after a fight,
 A resilient frontline character. Fighters don't hit harder; they last longer and take less lasting harm from a lost fight.
 
 ## Thief
-A Thief can pick locks, enter a base and take items from its chests: up to **2 stacks** per chest. Every theft leaves a discoverable **POI**, opens a **6-hour** tracking window and needs a record of the RP. At most **two entrants** can go in without a full raid. A Thief may also use **2 different /act names**.
+A Thief opens locks with a lockpick item, steals within the robbery table limits and hides behind an extra /act name. Every break-in leaves a **POI**, and at least one member of the targeted clan must be online. Their Liar’s Perfume can make everyone nearby believe a single command.
 
 ## Alchemist
-Brews elixirs other characters come looking for: truth, forgetting, babbling, submission, restoration and desire. Using a potion on another character needs that player's OOC consent; a potion never creates consent.
+The Alchemist creates special potions with powerful temporary effects. Each potion can be crafted once per day, needs no dice roll and is a physical item that can be stored, traded or sold.
 
 ## Slaver
 A captor who specializes in agreed enslavement RP. The Slaver breaks a consenting captive's will over time, compels the truth and frightens people into keeping their distance. Captivity rules are server rules for everyone; see `/rules/consequences`.
 
 ## Courtier
-Courtiers are skilled in diplomacy, persuasion, political maneuvering, forgery, intrigue and trade. They are most effective in social situations where information, reputation and influence matter more than brute force. They also know how to bargain for a better price. Every forgery must stay traceable: staff must be able to see how the Courtier learned what they used.
+Courtiers are skilled in diplomacy, persuasion, political maneuvering, forgery, intrigue and trade. They are most effective in social situations where information, reputation and influence matter more than brute force. They also know how to bargain for a better price. A forged letter only works if the Courtier knows the character they imitate well enough to make it believable.
 
 
 ## Planned daily profession activity: not yet launched

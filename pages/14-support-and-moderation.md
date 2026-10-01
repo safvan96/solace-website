@@ -20,7 +20,7 @@
 Where the situation is safe to continue, the live RP scene proceeds while staff reviews a ticket. A proven error can lead to a narrowly documented correction or retcon later. Staff may pause an active scene or take temporary protective action where player safety, serious exploitation or irreversible consequences require it.
 
 ## Evidence and outcomes
-Include date/time, character names, rule section, screenshots/recordings, unedited context and what remedy you request. **Recordings are for confidential ticket evidence, not IC discovery or public drama.** Staff distinguishes what is verified, disputed and inferred. The person whose character/faction is involved must step away from adjudicating that incident. Final action comes from a human staff member; AI may assist with drafting/organization but does not substitute for evidence.
+Include date/time, character names, rule section, screenshots/recordings, unedited context and what remedy you request. **Recordings are for confidential ticket evidence, not IC discovery or public drama.** The person whose character/faction is involved must step away from adjudicating that incident. Final action comes from a human staff member; AI may assist with drafting/organization but does not substitute for evidence.
 
 ## Possible responses
 Clarification, warning, documented strike, time-limited suspension, permanent ban or immediate proportionate safety intervention. Reasons and an appeal path should be stated. A report is not itself proof; equally, the existence of a rule loophole does not immunize bad-faith abuse. Staff conduct is reportable.
