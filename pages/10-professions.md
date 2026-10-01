@@ -1,6 +1,8 @@
 # Professions
 *What does your character bring to the table?*
 
+Every profession grants **+2 to two RPR skills** and has a long-term **Mastery** reward. Ability rolls use **1d20 + skill**; see `/rpr` for the full dice system.
+
 Professions are a character's everyday specialty: a reason to meet others, offer a service, find employment and create RP. They are **not** the advanced progression tracks called Classes. Every character picks a Profession, including characters who also hold a Class. SOLACE has **eight professions**. Each profession page lists every skill with its rules, limits and an example.
 
 | Profession | In one sentence | Skills | Status |

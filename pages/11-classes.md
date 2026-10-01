@@ -1,6 +1,8 @@
 # Classes
 *Specializations you develop through play.*
 
+Every class grants **+2 to two RPR skills**. Class abilities that need a roll use **1d20 + skill**; see `/rpr` for the full dice system.
+
 Classes are different from Professions. They open through applications, quests and mechanics rather than simply describing a character's everyday work. **Three classes are planned: Sorcerer, Blacksmith and Wise.** A character with a Class must also choose a Profession. Mechanical PvP stays mechanical; custom class checks are narrative/specialist tools and cannot replace combat results.
 
 # Sorcerer
