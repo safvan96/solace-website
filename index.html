@@ -262,7 +262,7 @@ a:hover{color:#EDEDED}
           <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C9C9C;letter-spacing:0.06em;padding:0 10px 6px">{{ g.title }}</div>
           <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
             <a href="{{ it.href }}" aria-current="{{ it.current }}" style="display:flex;align-items:center;gap:9px;padding:6px 10px 6px {{ it.pad }};border-radius:4px;text-decoration:none;font-size:15.5px;line-height:1.4;color:{{ it.color }};background:{{ it.bg }}" style-hover="color:#EDEDED;background:#131313">
-              <span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;flex-shrink:0;background:{{ it.dot }}"></span>{{ it.label }}
+              <span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;flex-shrink:0;background:{{ it.dot }}"></span><span style="min-width:0;display:block">{{ it.label }}</span>
             </a>
           </sc-for>
         </div>
@@ -336,9 +336,11 @@ a:hover{color:#EDEDED}
     </div>
     <sc-if value="{{ reportOpen }}" hint-placeholder-val="{{ false }}">
       <div style="margin:-18px 0 34px;padding:18px 20px;background:#131313;border:1px solid rgba(237,237,237,0.12);border-radius:6px;max-width:720px;display:flex;flex-direction:column;gap:12px">
-        <p style="margin:0;font-size:15.5px;color:#D2D2D2">Found something unclear? Open a <strong>General Question</strong> ticket and paste this. Ticket links go live when the support channel opens.</p>
-        <pre style="margin:0;padding:12px 14px;background:#080808;border:1px solid rgba(237,237,237,0.12);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.6;color:#EDEDED;white-space:pre-wrap">{{ reportText }}</pre>
-        <div><button onClick="{{ copyReport }}" style="height:36px;padding:0 14px;background:#C2A05A;color:#080808;border:0;border-radius:4px;font:inherit;font-size:14.5px;font-weight:600;cursor:pointer">Copy report text</button></div>
+        <p style="margin:0;font-size:15.5px;color:#D2D2D2">Found something unclear or wrong? Fill this in, copy it and paste it into a <strong>General Question</strong> ticket on Discord.</p>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:#9C9C9C">Section (optional)<input value="{{ repSection }}" onChange="{{ setRepSection }}" placeholder="e.g. Hub PvP" style="height:40px;padding:0 12px;background:#080808;border:1px solid rgba(237,237,237,0.18);border-radius:4px;color:#EDEDED;font:inherit;font-size:15px"></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:#9C9C9C">What is unclear or wrong?<textarea value="{{ repMsg }}" onChange="{{ setRepMsg }}" rows="4" placeholder="Describe the problem…" style="padding:10px 12px;background:#080808;border:1px solid rgba(237,237,237,0.18);border-radius:4px;color:#EDEDED;font:inherit;font-size:15px;line-height:1.5;resize:vertical"></textarea></label>
+        <pre style="margin:0;padding:12px 14px;background:#080808;border:1px solid rgba(237,237,237,0.12);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.6;color:#EDEDED;white-space:pre-wrap;user-select:all">{{ reportText }}</pre>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><button onClick="{{ copyReport }}" style="height:40px;padding:0 16px;background:#C2A05A;color:#080808;border:0;border-radius:4px;font:inherit;font-size:14.5px;font-weight:600;cursor:pointer">{{ copyLabel }}</button><span style="font-size:13.5px;color:#9C9C9C">{{ copyHint }}</span></div>
       </div>
     </sc-if>
 
@@ -393,7 +395,7 @@ a:hover{color:#EDEDED}
           </div>
         </div>
         <p style="margin:0;font-size:15px;color:#9C9C9C">NVL applies only to the attacker who started the fight and lost. Hub raids and sieges are never allowed.</p>
-        <div role="img" aria-label="Map showing the town boundaries (placeholder, not yet produced)" style="aspect-ratio:4 / 3;max-height:360px;border-radius:6px;background:repeating-linear-gradient(135deg,#131313 0 10px,#171717 10px 20px);border:1px solid rgba(237,237,237,0.1);display:flex;align-items:flex-end;padding:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#858585">HUB MAP · map-hub-placeholder.webp · 4:3 · published only after the real map position is confirmed</div>
+        <img src="img/hub.jpg" alt="The Hub tavern at night, crowded with characters of every profession" loading="lazy" style="display:block;width:100%;aspect-ratio:16 / 9;object-fit:cover;border-radius:6px;border:1px solid rgba(237,237,237,0.12)">
       </div>
     </sc-if>
 
@@ -473,11 +475,11 @@ a:hover{color:#EDEDED}
     <sc-if value="{{ isClasses }}" hint-placeholder-val="{{ false }}">
       <div style="margin:0 0 40px;max-width:1000px;display:flex;flex-direction:column;gap:20px">
         <sc-if value="{{ showSorc }}" hint-placeholder-val="{{ true }}">
-        <article style="display:flex;flex-wrap:wrap;background:#131313;border:1px solid rgba(237,237,237,0.12);border-radius:6px;overflow:hidden">
+        <article style="display:flex;flex-wrap:wrap;align-items:flex-start;background:#131313;border:1px solid rgba(237,237,237,0.12);border-radius:6px;overflow:hidden">
           <sc-if value="{{ panelImg }}" hint-placeholder-val="{{ true }}">
-            <a href="#/classes/sorcerer" aria-label="Sorcerer" style="flex:1 1 260px;max-width:100%;display:block;background:#0D0D0D;min-height:260px">{{ clsImgs.Sorc }}</a>
+            <a href="#/classes/sorcerer" aria-label="Sorcerer" style="flex:1 1 280px;display:block;margin:20px 20px 0 20px;border-radius:5px;overflow:hidden;border:1px solid rgba(194,160,90,0.35);line-height:0">{{ clsImgs.Sorc }}</a>
           </sc-if>
-          <div style="flex:999 1 340px;min-width:0;padding:24px 26px;display:flex;flex-direction:column;gap:16px">
+          <div style="flex:2 1 360px;min-width:0;padding:24px 26px;display:flex;flex-direction:column;gap:16px">
             <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
               <a href="#/classes/sorcerer" style="font-family:'Montserrat',system-ui,sans-serif;font-size:26px;font-weight:600;color:#EDEDED;text-decoration:none" style-hover="color:#C2A05A">Sorcerer</a>
               <span style="font-size:13px;color:#C2A05A;border:1px dashed rgba(194,160,90,0.6);padding:3px 10px;border-radius:12px">Provisional</span>
@@ -495,11 +497,11 @@ a:hover{color:#EDEDED}
         </article>
         </sc-if>
         <sc-if value="{{ showWise }}" hint-placeholder-val="{{ true }}">
-        <article style="display:flex;flex-wrap:wrap;background:#131313;border:1px solid rgba(237,237,237,0.12);border-radius:6px;overflow:hidden">
+        <article style="display:flex;flex-wrap:wrap;align-items:flex-start;background:#131313;border:1px solid rgba(237,237,237,0.12);border-radius:6px;overflow:hidden">
           <sc-if value="{{ panelImg }}" hint-placeholder-val="{{ true }}">
-            <a href="#/classes/wise" aria-label="Wise" style="flex:1 1 260px;max-width:100%;display:block;background:#0D0D0D;min-height:260px">{{ clsImgs.Wise }}</a>
+            <a href="#/classes/wise" aria-label="Wise" style="flex:1 1 280px;display:block;margin:20px 20px 0 20px;border-radius:5px;overflow:hidden;border:1px solid rgba(194,160,90,0.35);line-height:0">{{ clsImgs.Wise }}</a>
           </sc-if>
-          <div style="flex:999 1 340px;min-width:0;padding:24px 26px;display:flex;flex-direction:column;gap:16px">
+          <div style="flex:2 1 360px;min-width:0;padding:24px 26px;display:flex;flex-direction:column;gap:16px">
             <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
               <a href="#/classes/wise" style="font-family:'Montserrat',system-ui,sans-serif;font-size:26px;font-weight:600;color:#EDEDED;text-decoration:none" style-hover="color:#C2A05A">Wise</a>
               <span style="font-size:13px;color:#C2A05A;border:1px solid rgba(194,160,90,0.6);padding:3px 10px;border-radius:12px">Confirmed</span>
@@ -517,11 +519,11 @@ a:hover{color:#EDEDED}
         </article>
         </sc-if>
         <sc-if value="{{ showSmith }}" hint-placeholder-val="{{ true }}">
-        <article style="display:flex;flex-wrap:wrap;background:#131313;border:1px solid rgba(237,237,237,0.12);border-radius:6px;overflow:hidden">
+        <article style="display:flex;flex-wrap:wrap;align-items:flex-start;background:#131313;border:1px solid rgba(237,237,237,0.12);border-radius:6px;overflow:hidden">
           <sc-if value="{{ panelImg }}" hint-placeholder-val="{{ true }}">
-            <a href="#/classes/blacksmith" aria-label="Blacksmith" style="flex:1 1 260px;max-width:100%;display:block;background:#0D0D0D;min-height:260px">{{ clsImgs.Smith }}</a>
+            <a href="#/classes/blacksmith" aria-label="Blacksmith" style="flex:1 1 280px;display:block;margin:20px 20px 0 20px;border-radius:5px;overflow:hidden;border:1px solid rgba(194,160,90,0.35);line-height:0">{{ clsImgs.Smith }}</a>
           </sc-if>
-          <div style="flex:999 1 340px;min-width:0;padding:24px 26px;display:flex;flex-direction:column;gap:16px">
+          <div style="flex:2 1 360px;min-width:0;padding:24px 26px;display:flex;flex-direction:column;gap:16px">
             <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
               <a href="#/classes/blacksmith" style="font-family:'Montserrat',system-ui,sans-serif;font-size:26px;font-weight:600;color:#EDEDED;text-decoration:none" style-hover="color:#C2A05A">Blacksmith</a>
               <span style="font-size:13px;color:#C2A05A;border:1px solid rgba(194,160,90,0.6);padding:3px 10px;border-radius:12px">Confirmed</span>
@@ -554,7 +556,7 @@ a:hover{color:#EDEDED}
           <div style="padding:12px 14px;border:1px solid rgba(237,237,237,0.12);border-radius:5px"><dt style="font-weight:600">◌ Trade / complex</dt><dd style="margin:2px 0 0;color:#9C9C9C">Contact without one permanent alignment.</dd></div>
           <div style="padding:12px 14px;border:1px solid rgba(237,237,237,0.12);border-radius:5px"><dt style="font-weight:600">⊙ Internal differences</dt><dd style="margin:2px 0 0;color:#9C9C9C">A grouping contains rival subgroups.</dd></div>
         </dl>
-        <div role="img" aria-label="Approximate regions of the Hyborian world (map not yet produced)" style="aspect-ratio:16 / 9;max-height:300px;border-radius:6px;background:repeating-linear-gradient(135deg,#131313 0 10px,#171717 10px 20px);border:1px solid rgba(237,237,237,0.1);display:flex;align-items:flex-end;padding:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#858585">REGION MAP · races-region-map.webp · 16:9 · no enemy arrows</div>
+        <img src="img/peoples.jpg" alt="A line of warriors from the many peoples of the Hyborian world" loading="lazy" style="display:block;width:100%;aspect-ratio:1916 / 821;object-fit:cover;border-radius:6px;border:1px solid rgba(237,237,237,0.12)">
       </div>
     </sc-if>
 
@@ -1591,6 +1593,7 @@ class Component extends DCLogic {
     const faqItems = route === '/faq' ? this.faq() : [];
     const isRulePage = R.group === 'rules';
     const au = window.__solaceAudio, vol = st.vol ?? 0.12, muted = !!st.muted || vol === 0;
+    const repText = 'Page: ' + R.label + ' (#' + route + ')\nSection: ' + (st.repSection || '') + '\nWhat is unclear or wrong: ' + (st.repMsg || '');
     return {
       trackNo: (st.track || 0) + 1, audioRef: this.audioRef, musicReady: !!st.musicReady, musicOpacity: st.playing ? 0.72 : 1,
       musicStatus: st.playing ? 'NOW PLAYING' : 'PAUSED', playIcon: st.playing ? '\u275A\u275A' : '\u25B6\uFE0E', playLabel: st.playing ? 'Pause music' : 'Play music',
@@ -1609,8 +1612,13 @@ class Component extends DCLogic {
       body: page ? page.body : React.createElement('p', { style: { color: '#9C9C9C' } }, st.loaded ? 'This page could not be loaded.' : 'Loading…'),
       dynHead: !["/start","/world","/rules","/rules/roleplay","/rules/pvp","/rules/consequences","/rules/raids","/rules/building","/rules/details"].includes(route), showBody: route !== '/faq' && !["/start","/world","/rules","/rules/roleplay","/rules/pvp","/rules/consequences","/rules/raids","/rules/building","/rules/details"].includes(route), st_start: route === '/start', st_world: route === '/world', st_rules: route === '/rules', st_rules_roleplay: route === '/rules/roleplay', st_rules_pvp: route === '/rules/pvp', st_rules_consequences: route === '/rules/consequences', st_rules_raids: route === '/rules/raids', st_rules_building: route === '/rules/building', st_rules_details: route === '/rules/details', isRulePage,
       reportOpen: st.reportOpen, toggleReport: () => this.setState(s => ({ reportOpen: !s.reportOpen })),
-      reportText: 'Page: ' + R.label + ' (#' + route + ')\nRevision: Draft v0.1\nSection:\nWhat is unclear or wrong:',
-      copyReport: () => { const t = 'Page: ' + R.label + ' (#' + route + ')\nRevision: Draft v0.1\nSection:\nWhat is unclear or wrong:'; navigator.clipboard && navigator.clipboard.writeText(t).then(() => this.flash('Report text copied'), () => {}); },
+      reportText: repText,
+      copyLabel: st.repCopied === 'ok' ? 'Copied \u2713' : 'Copy report text', copyHint: st.repCopied === 'fail' ? 'Copy blocked by the browser. Select the text above and press Ctrl+C.' : st.repCopied === 'ok' ? 'Now paste it into your Discord ticket.' : '',
+      repSection: st.repSection || '', repMsg: st.repMsg || '',
+      setRepSection: (e) => this.setState({ repSection: e.target.value, repCopied: null }), setRepMsg: (e) => this.setState({ repMsg: e.target.value, repCopied: null }),
+      copyReport: () => { const t = repText; const done = (ok) => { this.setState({ repCopied: ok ? 'ok' : 'fail' }); clearTimeout(this._repT); if (ok) this._repT = setTimeout(() => this.setState({ repCopied: null }), 3000); };
+        const fallback = () => { try { const ta = document.createElement('textarea'); ta.value = t; ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0'; document.body.appendChild(ta); ta.focus(); ta.select(); const ok = document.execCommand('copy'); ta.remove(); done(ok); } catch (e) { done(false); } };
+        if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(t).then(() => done(true), fallback); else fallback(); },
       profImgEl: (pi >= 0 && PI[R.prof[0]]) ? React.createElement('img', { src: PI[R.prof[0]], alt: R.prof[0] + ' profession artwork', style: { width: 'min(100%,320px)', aspectRatio: '1 / 1', flexShrink: 0, objectFit: 'cover', borderRadius: '6px', border: '1px solid rgba(194,160,90,0.35)' } }) : null,
       clsImgEl: (R.group === 'cls' && (window.SOLACE_CLASS_IMG || {})[R.cls[0]]) ? React.createElement('img', { src: window.SOLACE_CLASS_IMG[R.cls[0]], alt: R.cls[0] + ' class artwork', style: { display: 'block', margin: '0 0 28px', width: 'min(100%,360px)', aspectRatio: '1 / 1', objectFit: 'cover', borderRadius: '6px', border: '1px solid rgba(194,160,90,0.35)' } }) : null,
       isProfDetail: pi >= 0, hasProfImg: pi >= 0 && !!PI[R.prof[0]],
@@ -1618,7 +1626,7 @@ class Component extends DCLogic {
       hasPotions: false, potions: this.POTIONS.map(p => ({ name: p[0], effect: p[1], duration: p[2] })),
       skillsTitle: R.group === 'cls' ? 'Abilities' : 'Skills',
       skills: ((pi >= 0 ? this.SKILLS[R.prof[0]] : R.group === 'cls' ? this.SKILLS[R.cls[0]] : null) || []).map(s => { const id = 'skill-' + (window.SolaceMD ? window.SolaceMD.slug(s.n) : s.n.toLowerCase().replace(/[^a-z0-9]+/g, '-')), c = s.s === 'c'; return { id, href: this.href(route, id), name: s.n, what: s.d, status: c ? 'Confirmed' : 'Proposed', glyph: c ? '\u25CF' : '\u25C7', border: c ? 'solid rgba(120,145,121,0.7)' : 'dashed rgba(194,160,90,0.7)', hasReq: !!s.req, req: s.req || '', hasMeta: !!(s.meta && s.meta.length), meta: (s.meta || []).map(m => ({ k: m[0], v: m[1] })), hasFx: !!(s.fx && s.fx.length), fxTitle: (s.fxT || 'Effect').toUpperCase(), fx: s.fx || [], hasRules: !!(s.rules && s.rules.length), rules: s.rules || [], hasNo: !!(s.no && s.no.length), noTitle: (s.noT || 'Cannot').toUpperCase(), no: s.no || [], hasEx: !!s.ex, ex: s.ex || '', hasImp: !!s.imp, imp: s.imp || '' }; }),
-      isClassDetail: R.group === 'cls', panelImg: route === '/classes', clsImgs: (() => { const C = window.SOLACE_CLASS_IMG || {}, mk = (s, a) => s ? React.createElement('img', { src: s, alt: a + ' class artwork', style: { display: 'block', width: '100%', height: '100%', minHeight: '260px', objectFit: 'cover' } }) : null; return { Sorc: mk(C.Sorcerer, 'Sorcerer'), Wise: mk(C.Wise, 'Wise'), Smith: mk(C.Blacksmith, 'Blacksmith') }; })(), showSorc: route === '/classes' || route === '/classes/sorcerer', showSmith: route === '/classes' || route === '/classes/blacksmith', showWise: route === '/classes' || route === '/classes/wise',
+      isClassDetail: R.group === 'cls', panelImg: route === '/classes', clsImgs: (() => { const C = window.SOLACE_CLASS_IMG || {}, mk = (s, a) => s ? React.createElement('img', { src: s, alt: a + ' class artwork', style: { display: 'block', width: '100%', height: 'auto', aspectRatio: '1 / 1', maxHeight: '440px', objectFit: 'cover', objectPosition: 'center 25%' } }) : null; return { Sorc: mk(C.Sorcerer, 'Sorcerer'), Wise: mk(C.Wise, 'Wise'), Smith: mk(C.Blacksmith, 'Blacksmith') }; })(), showSorc: route === '/classes' || route === '/classes/sorcerer', showSmith: route === '/classes' || route === '/classes/blacksmith', showWise: route === '/classes' || route === '/classes/wise',
       wiseTiers: [{ tier: 'I', power: 'Aura Reading', req: '1 person' }, { tier: 'II', power: 'Minor Divine Healing', req: '2 worshippers' }, { tier: 'III', power: 'Purification', req: '3 worshippers' }, { tier: 'IV', power: 'Blessed', req: '4 worshippers' }, { tier: 'V', power: 'Divine Empowerment', req: '5 worshippers' }],
       hasClsImg: R.group === 'cls' && !!(window.SOLACE_CLASS_IMG || {})[R.cls[0]],
       cls: R.group === 'cls' ? { bg: (window.SOLACE_CLASS_IMG || {})[R.cls[0]] ? 'url("' + window.SOLACE_CLASS_IMG[R.cls[0]] + '")' : 'none', img: (window.SOLACE_CLASS_IMG || {})[R.cls[0]] || '', alt: R.cls[0] + ' class artwork', file: 'ARTWORK · class-' + R.cls[0].toLowerCase() + '.webp · 16:9 · ' + R.cls[2].toLowerCase() } : { alt: '', file: '' },
