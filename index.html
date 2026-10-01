@@ -1371,16 +1371,17 @@ class Component extends DCLogic {
     if (window.__solaceAudio && window.__solaceAudio._solaceInit) {
       const a = window.__solaceAudio;
       this.track = a._solaceTrack || 0;
-      const playing = !a.paused;
       this._userPaused = !!a._solaceUserPaused;
-      this.setState({ vol: a.volume, muted: a.muted, musicReady: true, playing: playing, track: this.track });
+      this.setState({ vol: a.volume, muted: a.muted, musicReady: true, playing: !a.paused, track: this.track });
       a._solaceComp = this;
       return;
     }
-    const a = new Audio('audio/1.mp3');
+    const a = new Audio();
     a.preload = 'auto';
+    a.src = 'audio/1.mp3';
     a._solaceInit = true;
     a._solaceTrack = 0;
+    a._solaceUserPaused = false;
     a._solaceComp = this;
     window.__solaceAudio = a;
     this._userPaused = false;
@@ -1391,15 +1392,16 @@ class Component extends DCLogic {
     this.track = 0;
     const seek = () => { const t = this.TRACKS[a._solaceTrack || 0]; if (t && t.start && a.currentTime < t.start) { try { a.currentTime = t.start; } catch (e) {} } };
     a.addEventListener('loadedmetadata', seek);
-    a.addEventListener('ended', () => { const comp = a._solaceComp; if (comp && comp._userPaused) return; a._solaceTrack = ((a._solaceTrack || 0) + 1) % this.TRACKS.length; this.track = a._solaceTrack; if (comp) comp.setState({ track: this.track }); a.src = this.TRACKS[this.track].src; a.play().catch(() => {}); });
+    a.addEventListener('ended', () => { if (a._solaceUserPaused) return; a._solaceTrack = ((a._solaceTrack || 0) + 1) % this.TRACKS.length; const comp = a._solaceComp; if (comp) { comp.track = a._solaceTrack; comp.setState({ track: a._solaceTrack }); } a.src = this.TRACKS[a._solaceTrack].src; a.play().catch(() => {}); });
     if (a.readyState >= 1) seek();
-    a.addEventListener('play', () => { const comp = a._solaceComp; if (comp && comp._userPaused) { a.pause(); return; } if (comp) comp.setState({ playing: true }); });
+    a.addEventListener('play', () => { const comp = a._solaceComp; if (comp) comp.setState({ playing: true }); });
     a.addEventListener('pause', () => { const comp = a._solaceComp; if (comp) comp.setState({ playing: false }); });
-    const tryPlay = () => a.play().then(() => true).catch(() => false);
-    const kick = () => { ['pointerdown', 'keydown', 'mousemove', 'touchstart', 'scroll'].forEach(e => window.removeEventListener(e, kick)); const comp = a._solaceComp; if (comp && !comp._userPaused) tryPlay(); };
+    const doPlay = () => { a.play().then(() => { const comp = a._solaceComp; if (comp) comp.setState({ playing: true }); }).catch(() => {}); };
+    const events = ['pointerdown', 'keydown', 'mousemove', 'touchstart', 'scroll', 'click'];
+    const kick = () => { events.forEach(e => window.removeEventListener(e, kick, true)); if (!a._solaceUserPaused) doPlay(); };
     this._kick = kick;
-    tryPlay().then(ok => {
-      if (!ok) ['pointerdown', 'keydown', 'mousemove', 'touchstart', 'scroll'].forEach(e => window.addEventListener(e, kick));
+    a.play().then(() => { this.setState({ playing: true }); }).catch(() => {
+      events.forEach(e => window.addEventListener(e, kick, true));
     });
   }
   saveMusic() { try { localStorage.setItem('solace-music-v2', JSON.stringify({ v: this.state.vol, m: this.state.muted })); } catch (e) {} }
