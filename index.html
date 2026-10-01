@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23C2A05A'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='bold' fill='%23080808'%3ES%3C/text%3E%3C/svg%3E">
 <script src="./support.js"></script>
+<style>
+#solace-gate{position:fixed;inset:0;z-index:99999;background:#080808;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:opacity 0.6s ease}
+#solace-gate.hide{opacity:0;pointer-events:none}
+#solace-gate .gate-s{font-family:Georgia,serif;font-size:120px;color:#C2A05A;line-height:1;margin-bottom:24px}
+#solace-gate .gate-title{font-family:'Montserrat',system-ui,sans-serif;font-size:28px;letter-spacing:0.3em;color:#EDEDED;margin-bottom:8px}
+#solace-gate .gate-sub{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#9C9C9C;letter-spacing:0.08em}
+#solace-gate .gate-enter{margin-top:40px;padding:14px 48px;border:1px solid #C2A05A;border-radius:4px;background:transparent;color:#C2A05A;font-family:'Montserrat',system-ui,sans-serif;font-size:15px;letter-spacing:0.2em;cursor:pointer;transition:background 0.3s,color 0.3s}
+#solace-gate .gate-enter:hover{background:#C2A05A;color:#080808}
+</style>
 <script>
 (function(){
   if (!location.hash || location.hash === '#/') history.replaceState(null, '', location.pathname);
@@ -15,23 +24,25 @@
   try { var s = JSON.parse(localStorage.getItem('solace-music-v2') || '{}'); if (typeof s.v === 'number') v = s.v; m = !!s.m; } catch(e){}
   a.volume = v; a.muted = m;
   window.__solaceAudioEarly = a;
-  var started = false;
-  function startMusic(){
-    if (started) return; started = true;
-    a.play().catch(function(){});
-  }
-  a.play().then(function(){ started = true; }).catch(function(){
-    ['click','pointerdown','keydown','mousemove','touchstart','scroll'].forEach(function(e){
-      document.addEventListener(e, function handler(){
-        ['click','pointerdown','keydown','mousemove','touchstart','scroll'].forEach(function(ev){ document.removeEventListener(ev, handler, true); });
-        startMusic();
-      }, true);
+  document.addEventListener('DOMContentLoaded', function(){
+    var gate = document.getElementById('solace-gate');
+    if (!gate) return;
+    gate.addEventListener('click', function(){
+      a.play().catch(function(){});
+      gate.classList.add('hide');
+      setTimeout(function(){ gate.remove(); }, 700);
     });
   });
 })();
 </script>
 </head>
 <body>
+<div id="solace-gate">
+  <div class="gate-s">S</div>
+  <div class="gate-title">SOLACE</div>
+  <div class="gate-sub">21+ Roleplay Community</div>
+  <button class="gate-enter">ENTER</button>
+</div>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
