@@ -51,11 +51,11 @@ a:hover{color:#EDEDED}
 
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="#080808"></rect><text x="50" y="64" text-anchor="middle" font-family="Georgia, serif" font-size="44" fill="#C2A05A">S</text></svg></template>
 <header style="position:sticky;top:0;z-index:50;background:rgba(8,8,8,0.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(237,237,237,0.12)">
-  <div style="max-width:1440px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;gap:28px">
-    <a href="#/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#EDEDED;flex-shrink:0">
-      <img src="img/logo-mark.png" alt="" aria-hidden="true" style="display:block;height:66px;width:auto;margin-top:2px;filter:brightness(1.25) saturate(1.15) drop-shadow(0 0 10px rgba(255,140,40,0.35))">
-      <span style="font-family:'Montserrat',system-ui,sans-serif;font-size:23px;font-weight:500;letter-spacing:0.28em">SOLACE</span>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C9C9C;letter-spacing:0.02em">21+</span>
+  <div style="max-width:1440px;margin:0 auto;padding:0 clamp(12px,4vw,24px);height:68px;display:flex;align-items:center;gap:clamp(10px,3vw,28px)">
+    <a href="#/" style="display:flex;align-items:center;gap:clamp(6px,2vw,12px);text-decoration:none;color:#EDEDED;flex-shrink:0;min-width:0">
+      <img src="img/logo-mark.png" alt="" aria-hidden="true" style="object-fit:contain;flex-shrink:0;transform:none;display:block;height:clamp(50px,13vw,66px);width:auto;margin-top:2px">
+      <span style="font-family:'Montserrat',system-ui,sans-serif;font-size:clamp(17px,4.6vw,23px);font-weight:500;letter-spacing:clamp(2px,1.2vw,6px)">SOLACE</span>
+      <sc-if value="{{ wideSearchLabel }}" hint-placeholder-val="{{ true }}"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C9C9C;letter-spacing:0.02em">21+</span></sc-if>
     </a>
     <sc-if value="{{ wideNav }}" hint-placeholder-val="{{ true }}">
       <nav aria-label="Primary" style="display:flex;gap:4px;align-items:center">
@@ -105,7 +105,7 @@ a:hover{color:#EDEDED}
         <button onClick="{{ h.pick }}" aria-label="{{ h.label }}" style="width:44px;height:24px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:3px;border-radius:2px;background:{{ h.dot }}"></span></button>
       </sc-for>
     </div>
-    <img src="img/logo.png" alt="SOLACE RP Server" style="position:absolute;right:clamp(16px,3vw,40px);bottom:clamp(60px,6vw,84px);width:clamp(90px,10vw,140px);height:auto;z-index:2;filter:drop-shadow(0 6px 20px rgba(0,0,0,0.65))">
+    <sc-if value="{{ wideNav }}" hint-placeholder-val="{{ true }}"><img src="img/logo-full.png" alt="SOLACE RP Server" style="object-fit:contain;flex-shrink:0;transform:none;position:absolute;right:clamp(16px,3vw,40px);bottom:clamp(60px,6vw,84px);width:clamp(90px,10vw,140px);height:auto;z-index:2"></sc-if><sc-if value="{{ narrowNav }}" hint-placeholder-val="{{ false }}"><img src="img/logo-full.png" alt="SOLACE RP Server" style="object-fit:contain;flex-shrink:0;transform:none;position:absolute;right:14px;top:16px;width:88px;height:auto;z-index:2"></sc-if>
     <div style="position:relative;max-width:1440px;width:100%;margin:0 auto;padding:120px 24px 72px">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;letter-spacing:0.08em;color:#C2A05A;margin-bottom:22px">21+ · CONAN EXILES · RP / PvP / PvE</div>
       <h1 style="font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:clamp(40px,6.2vw,84px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:13ch;text-wrap:balance">An exile is more than their sentence.</h1>
@@ -1241,7 +1241,7 @@ a:hover{color:#EDEDED}
 <footer style="border-top:1px solid rgba(237,237,237,0.12);background:#050505">
   <div style="max-width:1440px;margin:0 auto;padding:48px 24px 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px;font-size:15px;color:#9C9C9C">
     <div style="display:flex;flex-direction:column;gap:8px">
-      <img src="img/logo.png" alt="SOLACE RP Server" loading="lazy" style="display:block;width:150px;height:auto;margin:0 0 6px -6px">
+      <img src="img/logo-full.png" alt="SOLACE RP Server" loading="lazy" style="object-fit:contain;flex-shrink:0;transform:none;display:block;width:150px;height:auto;margin:0 0 6px -6px">
       <span>21+ · Conan Exiles · RP / PvP / PvE</span>
       <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px">Draft v0.1</span>
     </div>
