@@ -72,9 +72,8 @@ a:hover{color:#EDEDED}
   <section style="position:relative;min-height:min(86vh,820px);display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid rgba(237,237,237,0.12);background:#080808">
     <img src="img/10.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 40%;opacity:{{ hs0.opacity }};transform:scale({{ hs0.scale }});transition:opacity 1.6s ease, transform 8s ease-out">
     <img src="img/ilk-foto.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 30%;opacity:{{ hs1.opacity }};transform:scale({{ hs1.scale }});transition:opacity 1.6s ease, transform 8s ease-out">
-    <img src="img/kapak-ikinci-foto.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;opacity:{{ hs2.opacity }};transform:scale({{ hs2.scale }});transition:opacity 1.6s ease, transform 8s ease-out">
-    <img src="img/kapak-4-foto.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%;opacity:{{ hs3.opacity }};transform:scale({{ hs3.scale }});transition:opacity 1.6s ease, transform 8s ease-out">
-    <img src="img/1.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 40%;opacity:{{ hs4.opacity }};transform:scale({{ hs4.scale }});transition:opacity 1.6s ease, transform 8s ease-out">
+    <img src="img/kapak-4-foto.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%;opacity:{{ hs2.opacity }};transform:scale({{ hs2.scale }});transition:opacity 1.6s ease, transform 8s ease-out">
+    <img src="img/1.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 40%;opacity:{{ hs3.opacity }};transform:scale({{ hs3.scale }});transition:opacity 1.6s ease, transform 8s ease-out">
     <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,0.85) 0%,rgba(8,8,8,0.45) 38%,rgba(8,8,8,0) 65%)"></div>
     <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,0.35) 0%,rgba(8,8,8,0) 25%,rgba(8,8,8,0) 55%,rgba(8,8,8,0.95) 100%)"></div>
     <div style="position:absolute;right:24px;bottom:28px;display:flex;gap:8px;z-index:2">
@@ -214,6 +213,7 @@ a:hover{color:#EDEDED}
       <img src="img/12.jpg" alt="Community screenshot" loading="lazy" style="display:block;width:100%;height:100%;min-height:200px;object-fit:cover;object-position:65% 40%;border-radius:5px;grid-column:span 1">
       <img src="img/kapak-3-foto.jpg" alt="Community screenshot" loading="lazy" style="display:block;width:100%;height:100%;min-height:200px;object-fit:cover;object-position:70% 30%;border-radius:5px;grid-column:span 1">
       <img src="img/6.jpg" alt="Community screenshot" loading="lazy" style="display:block;width:100%;height:100%;min-height:200px;object-fit:cover;object-position:60% 35%;border-radius:5px;grid-column:span 1">
+      <img src="img/kapak-ikinci-foto.jpg" alt="Community screenshot" loading="lazy" style="display:block;width:100%;height:100%;min-height:200px;object-fit:cover;object-position:55% 40%;border-radius:5px;grid-column:span 1">
     </div>
   </section>
 
@@ -1198,6 +1198,19 @@ a:hover{color:#EDEDED}
 </div>
 </sc-if>
 
+<audio ref="{{ audioRef }}" src="audio/1.mp3" preload="auto"></audio>
+<sc-if value="{{ musicReady }}" hint-placeholder-val="{{ false }}">
+<div role="region" aria-label="Background music" style="position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:30px;background:rgba(8,8,8,0.42);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(237,237,237,0.14);box-shadow:0 8px 30px rgba(0,0,0,0.35);color:#EDEDED;opacity:{{ musicOpacity }};transition:opacity .3s ease" style-hover="opacity:1">
+  <button onClick="{{ togglePlay }}" aria-label="{{ playLabel }}" style="width:38px;height:38px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;font-size:15px;line-height:1;background:#C2A05A;color:#080808;border:none">{{ playIcon }}</button>
+  <div style="display:flex;flex-direction:column;gap:1px;min-width:0">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:#C2A05A">{{ musicStatus }}</span>
+    <span style="font-size:13px;white-space:nowrap">SOLACE Theme · {{ trackNo }}/3</span>
+  </div>
+  <input type="range" min="0" max="100" value="{{ volumePct }}" onChange="{{ setVolume }}" aria-label="Volume" style="width:84px;accent-color:#C2A05A;cursor:pointer">
+  <button onClick="{{ toggleMute }}" aria-label="{{ muteLabel }}" style="width:38px;height:38px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;font-size:15px;line-height:1;width:32px;height:32px;background:transparent;color:#EDEDED;border:1px solid rgba(237,237,237,0.2)">{{ muteIcon }}</button>
+</div>
+</sc-if>
+
 <footer style="border-top:1px solid rgba(237,237,237,0.12);background:#050505">
   <div style="max-width:1440px;margin:0 auto;padding:48px 24px 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px;font-size:15px;color:#9C9C9C">
     <div style="display:flex;flex-direction:column;gap:8px">
@@ -1349,9 +1362,37 @@ class Component extends DCLogic {
     [['metagaming', 'meta', 'godmodding', 'powergaming', 'metaposing'], '/rules/roleplay', 'how-we-write-together', 'How we write together']
   ];
 
-  HERO = [['img/10.jpg','75% 40%','A woman reading on cushions'],['img/ilk-foto.jpg','62% 30%','Gladiator with a spear'],['img/kapak-ikinci-foto.jpg','60% 40%','A woman in a rope hammock'],['img/kapak-4-foto.jpg','60% 50%','A traveller resting on the dunes'],['img/1.jpg','70% 40%','A dark-haired exile in red light']];
+  HERO = [['img/10.jpg','75% 40%','A woman reading on cushions'],['img/ilk-foto.jpg','62% 30%','Gladiator with a spear'],['img/kapak-4-foto.jpg','60% 50%','A traveller resting on the dunes'],['img/1.jpg','70% 40%','A dark-haired exile in red light']];
   state = { hero: 0, route: '/', s: null, pages: {}, loaded: false, searchOpen: false, q: '', sel: 0, checked: {}, members: 4, ticket: null, faqQ: '', menuOpen: false, w: typeof window !== 'undefined' ? window.innerWidth : 1280, reportOpen: false, toast: null, mdReady: !!window.SolaceMD };
   searchRef = React.createRef();
+  audioRef = React.createRef();
+  TRACKS = [{ src: 'audio/1.mp3', start: 15 }, { src: 'audio/2.mp3' }, { src: 'audio/3.mp3' }];
+  initMusic() {
+    const a = this.audioRef.current; if (!a) return;
+    const old = window.__solaceAudio; if (old && old !== a) { try { old.pause(); old.removeAttribute('src'); old.load(); } catch (e) {} }
+    window.__solaceAudio = a;
+    document.querySelectorAll('audio').forEach(x => { if (x !== a) x.pause(); });
+    let v = 0.12, m = false;
+    try { const s = JSON.parse(localStorage.getItem('solace-music-v2') || '{}'); if (typeof s.v === 'number') v = s.v; m = !!s.m; } catch (e) {}
+    a.volume = v; a.muted = m;
+    this.setState({ vol: v, muted: m });
+    this.track = 0;
+    const seek = () => { const t = this.TRACKS[this.track]; if (t.start && a.currentTime < t.start) { try { a.currentTime = t.start; } catch (e) {} } };
+    a.addEventListener('loadedmetadata', seek);
+    a.addEventListener('canplay', () => this.setState({ musicReady: true }), { once: true });
+    a.addEventListener('ended', () => { if (this._userPaused) return; this.track = (this.track + 1) % this.TRACKS.length; this.setState({ track: this.track }); a.src = this.TRACKS[this.track].src; a.play().catch(() => {}); });
+    if (a.readyState >= 1) seek();
+    a.addEventListener('play', () => { if (this._userPaused) { a.pause(); return; } this.setState({ playing: true }); });
+    a.addEventListener('pause', () => this.setState({ playing: false }));
+    const tryPlay = () => a.play().then(() => true).catch(() => false);
+    tryPlay().then(ok => {
+      if (ok) return;
+      const kick = (ev) => { ['pointerdown', 'keydown'].forEach(e => window.removeEventListener(e, kick)); if (ev && ev.target && ev.target.closest && ev.target.closest('[aria-label="Background music"]')) return; if (!this._userPaused) tryPlay(); };
+      this._kick = kick;
+      ['pointerdown', 'keydown'].forEach(e => window.addEventListener(e, kick));
+    });
+  }
+  saveMusic() { try { localStorage.setItem('solace-music-v2', JSON.stringify({ v: this.state.vol, m: this.state.muted })); } catch (e) {} }
 
   syncDomToc() {
     const r = this.state.route, a = document.querySelector('[data-editable-page="' + r + '"]');
@@ -1363,6 +1404,7 @@ class Component extends DCLogic {
   }
   componentDidUpdate() { this.syncDomToc(); }
   componentDidMount() {
+    this.initMusic();
     setTimeout(() => this.syncDomToc(), 0);
     const pslug = (n) => n.toLowerCase().replace(/\s+/g, '-');
     if (!this.ROUTES.some(r => r.group === 'prof')) this.PROFS.forEach(p => { this.ROUTES.push({ p: '/professions/' + pslug(p[0]), label: p[0], file: null, group: 'prof', q: p[2], prof: p }); });
@@ -1391,7 +1433,7 @@ class Component extends DCLogic {
       this.setState({ pages, loaded: true }, () => { this.scrollNow(false); setTimeout(() => this.scrollNow(false), 400); });
     });
   }
-  componentWillUnmount() { clearInterval(this.heroTimer); window.removeEventListener('hashchange', this.onHash); window.removeEventListener('resize', this.onResize); window.removeEventListener('keydown', this.onKey); }
+  componentWillUnmount() { try { const a = this.audioRef.current; if (a) { a.pause(); } this._userPaused = true; ['pointerdown', 'keydown'].forEach(e => this._kick && window.removeEventListener(e, this._kick)); } catch (e) {} clearInterval(this.heroTimer); window.removeEventListener('hashchange', this.onHash); window.removeEventListener('resize', this.onResize); window.removeEventListener('keydown', this.onKey); }
   scrollNow(routeChanged) {
     setTimeout(() => {
       const id = this.state.s, el = id && document.getElementById(id);
@@ -1529,7 +1571,14 @@ class Component extends DCLogic {
     const ticketSel = st.ticket != null ? this.TICKETS[st.ticket] : null;
     const faqItems = route === '/faq' ? this.faq() : [];
     const isRulePage = R.group === 'rules';
+    const au = this.audioRef.current, vol = st.vol ?? 0.12, muted = !!st.muted || vol === 0;
     return {
+      trackNo: (st.track || 0) + 1, audioRef: this.audioRef, musicReady: !!st.musicReady, musicOpacity: st.playing ? 0.72 : 1,
+      musicStatus: st.playing ? 'NOW PLAYING' : 'PAUSED', playIcon: st.playing ? '\u275A\u275A' : '\u25B6\uFE0E', playLabel: st.playing ? 'Pause music' : 'Play music',
+      muteIcon: muted ? '\u2715' : '\u266A', muteLabel: muted ? 'Unmute' : 'Mute', volumePct: Math.round((st.muted ? 0 : vol) * 100),
+      togglePlay: () => { if (!au) return; if (au.paused) { this._userPaused = false; au.play().catch(() => {}); } else { this._userPaused = true; au.pause(); } },
+      toggleMute: () => { if (!au) return; const m = !st.muted; au.muted = m; if (!m && vol === 0) { au.volume = 0.12; this.setState({ vol: 0.12 }); } this.setState({ muted: m }, () => this.saveMusic()); },
+      setVolume: (e) => { if (!au) return; const v = Number(e.target.value) / 100; au.volume = v; au.muted = v === 0; this.setState({ vol: v, muted: v === 0 }, () => this.saveMusic()); },
       heroSlides: this.HERO.map((h, i) => { const on = i === st.hero; return { src: h[0], pos: h[1], label: 'Show image ' + (i + 1) + ': ' + h[2], opacity: on ? 1 : 0, scale: on ? 1.04 : 1, dot: on ? '#C2A05A' : 'rgba(237,237,237,0.35)', pick: () => { this.setState({ hero: i }); clearInterval(this.heroTimer); this.heroTimer = setInterval(() => { if (this.state.route === '/' && !document.hidden) this.setState(s => ({ hero: (s.hero + 1) % this.HERO.length })); }, 7000); } }; }),
       hs0: { opacity: st.hero === 0 ? 1 : 0, scale: st.hero === 0 ? 1.04 : 1 }, hs1: { opacity: st.hero === 1 ? 1 : 0, scale: st.hero === 1 ? 1.04 : 1 }, hs2: { opacity: st.hero === 2 ? 1 : 0, scale: st.hero === 2 ? 1.04 : 1 }, hs3: { opacity: st.hero === 3 ? 1 : 0, scale: st.hero === 3 ? 1.04 : 1 }, hs4: { opacity: st.hero === 4 ? 1 : 0, scale: st.hero === 4 ? 1.04 : 1 }, hs5: { opacity: st.hero === 5 ? 1 : 0, scale: st.hero === 5 ? 1.04 : 1 }, hs6: { opacity: st.hero === 6 ? 1 : 0, scale: st.hero === 6 ? 1.04 : 1 },
       isHome, isInner: !isHome, narrow, wideNav, narrowNav: !wideNav, wideSearchLabel: w >= 700,
