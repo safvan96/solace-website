@@ -1415,6 +1415,8 @@ class Component extends DCLogic {
     try { const c = JSON.parse(localStorage.getItem('solace-checklist-v1') || '{}'); this.setState({ checked: c }); } catch (e) {}
     this.onHash = () => this.readHash(); window.addEventListener('hashchange', this.onHash); this.readHash();
     this.heroTimer = setInterval(() => { if (this.state.route === '/' && !document.hidden) this.setState(s => ({ hero: (s.hero + 1) % this.HERO.length })); }, 7000);
+    this._onVisibility = () => { const a = this.audioRef.current; if (!a || this._userPaused) return; if (document.hidden) { this._wasPlaying = !a.paused; a.pause(); } else if (this._wasPlaying) { a.play().catch(() => {}); } };
+    document.addEventListener('visibilitychange', this._onVisibility);
     this.onResize = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this.onResize);
     this.onKey = (e) => {
       const tag = (e.target && e.target.tagName) || '';
@@ -1433,7 +1435,7 @@ class Component extends DCLogic {
       this.setState({ pages, loaded: true }, () => { this.scrollNow(false); setTimeout(() => this.scrollNow(false), 400); });
     });
   }
-  componentWillUnmount() { try { const a = this.audioRef.current; if (a) { a.pause(); } this._userPaused = true; ['pointerdown', 'keydown'].forEach(e => this._kick && window.removeEventListener(e, this._kick)); } catch (e) {} clearInterval(this.heroTimer); window.removeEventListener('hashchange', this.onHash); window.removeEventListener('resize', this.onResize); window.removeEventListener('keydown', this.onKey); }
+  componentWillUnmount() { try { const a = this.audioRef.current; if (a) { a.pause(); } this._userPaused = true; ['pointerdown', 'keydown'].forEach(e => this._kick && window.removeEventListener(e, this._kick)); } catch (e) {} clearInterval(this.heroTimer); window.removeEventListener('hashchange', this.onHash); window.removeEventListener('resize', this.onResize); window.removeEventListener('keydown', this.onKey); document.removeEventListener('visibilitychange', this._onVisibility); }
   scrollNow(routeChanged) {
     setTimeout(() => {
       const id = this.state.s, el = id && document.getElementById(id);
