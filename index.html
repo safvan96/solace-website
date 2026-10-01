@@ -33,7 +33,7 @@
 <helmet>
   <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script src="./solace-md.js"></script>
 <script src="./solace-pages.js"></script>
 <script src="./solace-prof-img.js"></script>
@@ -45,6 +45,15 @@ a{color:#C2A05A}
 a:hover{color:#EDEDED}
 ::selection{background:rgba(194,160,90,0.35);color:#EDEDED}
 :focus-visible{outline:2px solid #C2A05A;outline-offset:2px}
+@keyframes cupBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes cupFlicker{0%,100%{opacity:.92}46%{opacity:.92}47%{opacity:.6}48%{opacity:.95}49%{opacity:.75}50%{opacity:.92}}
+@keyframes cupBlink{0%,92%,100%{opacity:1}94%,96%{opacity:0}}
+@keyframes cupLid{0%,92%,100%{opacity:0}94%,96%{opacity:1}}
+@keyframes cupSmile{0%,62%,100%{opacity:0}66%,86%{opacity:1}}
+@keyframes cupFrown{0%,62%,100%{opacity:1}66%,86%{opacity:0}}
+@keyframes cupSteam{0%{transform:translateY(6px);opacity:0}25%{opacity:.85}100%{transform:translateY(-22px);opacity:0}}
+@keyframes cupScan{0%{background-position:0 0}100%{background-position:0 14px}}
+@media (prefers-reduced-motion:reduce){[data-coffee] *{animation:none!important}}
 </style>
 </helmet>
 <div style="min-height:100vh;background:#080808;color:#EDEDED;font-family:'Montserrat',system-ui,sans-serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased">
@@ -256,6 +265,170 @@ a:hover{color:#EDEDED}
 </main>
 </sc-if>
 
+<sc-if value="{{ isDonate }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="Donate" style="background:#111214;color:#E6E7E9;min-height:100vh">
+  <section style="max-width:1240px;margin:0 auto;padding:clamp(56px,9vw,104px) 24px 40px;display:flex;flex-direction:column;gap:22px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.24em;color:#8E9197">SUPPORT SOLACE</span>
+    <h1 style="margin:0;font-family:'Montserrat',system-ui,sans-serif;font-size:clamp(46px,7.4vw,104px);font-weight:800;letter-spacing:-0.045em;line-height:0.92;color:#F2F3F5;max-width:12ch">Keep the realm alive.</h1>
+    <p style="margin:0;max-width:52ch;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#A9ACB2;text-wrap:pretty">SOLACE is run by players, for players. Supporter tiers keep the server running, and Crown of Solace donations also plant a tree or feed animals in need.</p>
+  </section>
+  <section aria-label="Supporter tiers" style="max-width:1440px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:repeat(5,minmax(240px,1fr));gap:14px;align-items:stretch;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin">
+      <article style="scroll-snap-align:start;min-width:0;display:flex;flex-direction:column;background:#18191C;border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden">
+        <div style="position:relative;height:250px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 60% 40% at 50% 88%, oklch(0.88 0.11 20 / 0.16), transparent 70%), repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 28px), #0E0F11;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <span style="position:absolute;top:16px;left:18px;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.2em;color:oklch(0.88 0.11 20 / 0.8)">TIER 01</span>
+          <div style="transform:scale(0.8);transform-origin:center">{{ donateArt.mini5 }}</div>
+        </div>
+        <div style="padding:22px 20px 24px;display:flex;flex-direction:column;gap:18px;flex:1">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+            <h2 style="margin:0;font-family:'Montserrat',system-ui,sans-serif;font-size:21px;font-weight:700;letter-spacing:-0.01em;color:#F2F3F5">People of Solace</h2>
+            <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Montserrat',system-ui,sans-serif;font-size:44px;font-weight:800;letter-spacing:-0.04em;line-height:0.9;color:oklch(0.88 0.11 20)">$5</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8E9197">USD</span></div>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0;font-size:15.5px;line-height:1.45;color:#D6D8DB">
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 20)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+200 Building Pieces</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 20)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+25 Building Placeables</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 20)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>People of Solace Tag</span></span></li>
+          </ul>
+          <a href="https://buymeacoffee.com/solacerp" target="_blank" rel="noopener noreferrer" style="margin-top:auto;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:10px;background:oklch(0.88 0.11 20);color:#111214;font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:16px;text-decoration:none" style-hover="background:#F2F3F5;color:#111214">Support with $5</a>
+        </div>
+      </article>
+      <article style="scroll-snap-align:start;min-width:0;display:flex;flex-direction:column;background:#18191C;border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden">
+        <div style="position:relative;height:250px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 60% 40% at 50% 88%, oklch(0.88 0.11 20 / 0.16), transparent 70%), repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 28px), #0E0F11;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <span style="position:absolute;top:16px;left:18px;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.2em;color:oklch(0.88 0.11 20 / 0.8)">TIER 02</span>
+          <div style="transform:scale(0.8);transform-origin:center">{{ donateArt.mini }}</div>
+        </div>
+        <div style="padding:22px 20px 24px;display:flex;flex-direction:column;gap:18px;flex:1">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+            <h2 style="margin:0;font-family:'Montserrat',system-ui,sans-serif;font-size:21px;font-weight:700;letter-spacing:-0.01em;color:#F2F3F5">Pillar of Solace</h2>
+            <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Montserrat',system-ui,sans-serif;font-size:44px;font-weight:800;letter-spacing:-0.04em;line-height:0.9;color:oklch(0.88 0.11 60)">$10</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8E9197">USD</span></div>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0;font-size:15.5px;line-height:1.45;color:#D6D8DB">
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 60)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+300 Building Pieces</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 60)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+50 Building Placeables</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 60)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Pillar of Solace Tag</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 60)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>100 Aloe Elixir</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 60)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>200 Feast</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 60)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>1x Elixir Set</span><span style="font-size:13.5px;color:#8E9197">1 of every special elixir</span></span></li>
+          </ul>
+          <a href="https://buymeacoffee.com/solacerp" target="_blank" rel="noopener noreferrer" style="margin-top:auto;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:10px;background:oklch(0.88 0.11 60);color:#111214;font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:16px;text-decoration:none" style-hover="background:#F2F3F5;color:#111214">Support with $10</a>
+        </div>
+      </article>
+      <article style="scroll-snap-align:start;min-width:0;display:flex;flex-direction:column;background:#18191C;border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden">
+        <div style="position:relative;height:250px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 60% 40% at 50% 88%, oklch(0.88 0.11 205 / 0.16), transparent 70%), repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 28px), #0E0F11;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <span style="position:absolute;top:16px;left:18px;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.2em;color:oklch(0.88 0.11 205 / 0.8)">TIER 03</span>
+          <div style="transform:scale(0.8);transform-origin:center">{{ donateArt.coffee }}</div>
+        </div>
+        <div style="padding:22px 20px 24px;display:flex;flex-direction:column;gap:18px;flex:1">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+            <h2 style="margin:0;font-family:'Montserrat',system-ui,sans-serif;font-size:21px;font-weight:700;letter-spacing:-0.01em;color:#F2F3F5">Patron of Solace</h2>
+            <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Montserrat',system-ui,sans-serif;font-size:44px;font-weight:800;letter-spacing:-0.04em;line-height:0.9;color:oklch(0.88 0.11 205)">$25</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8E9197">USD</span></div>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0;font-size:15.5px;line-height:1.45;color:#D6D8DB">
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 205)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+5 Accessory Limit</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 205)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Custom In-Game Nametag Color</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 205)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+750 Building Pieces</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 205)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+125 Building Placeables</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 205)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>One Horse in Any Available Color</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 205)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Patron of Solace Tag</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 205)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Access to private supporter/admin chat</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 205)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>200 Aloe Elixir</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 205)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>500 Feast</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 205)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>3x Elixir Set</span><span style="font-size:13.5px;color:#8E9197">3 of every special elixir</span></span></li>
+          </ul>
+          <a href="https://buymeacoffee.com/solacerp" target="_blank" rel="noopener noreferrer" style="margin-top:auto;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:10px;background:oklch(0.88 0.11 205);color:#111214;font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:16px;text-decoration:none" style-hover="background:#F2F3F5;color:#111214">Support with $25</a>
+        </div>
+      </article>
+      <article style="scroll-snap-align:start;min-width:0;display:flex;flex-direction:column;background:#18191C;border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden">
+        <div style="position:relative;height:250px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 60% 40% at 50% 88%, oklch(0.88 0.11 155 / 0.16), transparent 70%), repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 28px), #0E0F11;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <span style="position:absolute;top:16px;left:18px;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.2em;color:oklch(0.88 0.11 155 / 0.8)">TIER 04</span>
+          <div style="transform:scale(0.8);transform-origin:center">{{ donateArt.dog }}</div>
+        </div>
+        <div style="padding:22px 20px 24px;display:flex;flex-direction:column;gap:18px;flex:1">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+            <h2 style="margin:0;font-family:'Montserrat',system-ui,sans-serif;font-size:21px;font-weight:700;letter-spacing:-0.01em;color:#F2F3F5">Keeper of Solace</h2>
+            <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Montserrat',system-ui,sans-serif;font-size:44px;font-weight:800;letter-spacing:-0.04em;line-height:0.9;color:oklch(0.88 0.11 155)">$50</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8E9197">USD</span></div>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0;font-size:15.5px;line-height:1.45;color:#D6D8DB">
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+10 Accessory Limit</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Custom In-Game Nametag Color</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Free Caravan Use</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+1,250 Building Pieces</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+175 Building Placeables</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>One Horse in Any Available Color</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Keeper of Solace Tag</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Access to private supporter/admin chat</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>400 Aloe Elixir</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>500 Feast</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 155)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>6x Elixir Set</span><span style="font-size:13.5px;color:#8E9197">6 of every special elixir</span></span></li>
+          </ul>
+          <a href="https://buymeacoffee.com/solacerp" target="_blank" rel="noopener noreferrer" style="margin-top:auto;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:10px;background:oklch(0.88 0.11 155);color:#111214;font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:16px;text-decoration:none" style-hover="background:#F2F3F5;color:#111214">Support with $50</a>
+        </div>
+      </article>
+      <article style="scroll-snap-align:start;min-width:0;display:flex;flex-direction:column;background:#18191C;border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden">
+        <div style="position:relative;height:250px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 60% 40% at 50% 88%, oklch(0.88 0.11 300 / 0.16), transparent 70%), repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 28px), #0E0F11;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <span style="position:absolute;top:16px;left:18px;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.2em;color:oklch(0.88 0.11 300 / 0.8)">TIER 05</span>
+          <div style="transform:scale(0.8);transform-origin:center">{{ donateArt.cat }}</div>
+        </div>
+        <div style="padding:22px 20px 24px;display:flex;flex-direction:column;gap:18px;flex:1">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+            <h2 style="margin:0;font-family:'Montserrat',system-ui,sans-serif;font-size:21px;font-weight:700;letter-spacing:-0.01em;color:#F2F3F5">Crown of Solace</h2>
+            <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Montserrat',system-ui,sans-serif;font-size:44px;font-weight:800;letter-spacing:-0.04em;line-height:0.9;color:oklch(0.88 0.11 300)">$100</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8E9197">USD</span></div>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0;font-size:15.5px;line-height:1.45;color:#D6D8DB">
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+15 Accessory Limit</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Custom In-Game Nametag Color</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Free Caravan Use</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+2,000 Building Pieces</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+250 Building Placeables</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>One Horse in Any Available Color</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Crown of Solace Tag</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Access to private supporter/admin chat</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>1,000 Aloe Elixir</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>1,500 Feast</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>10x Elixir Set</span><span style="font-size:13.5px;color:#8E9197">10 of every special elixir</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>+1 Additional Vault for the Clan</span></span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,0.06)"><span style="flex-shrink:0;width:6px;height:6px;margin-top:9px;background:oklch(0.88 0.11 300)"></span><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span>Official donation certificate</span><span style="font-size:13.5px;color:#8E9197">A sapling or shelter food, donated in your name</span></span></li>
+          </ul>
+          <a href="https://buymeacoffee.com/solacerp" target="_blank" rel="noopener noreferrer" style="margin-top:auto;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:10px;background:oklch(0.88 0.11 300);color:#111214;font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:16px;text-decoration:none" style-hover="background:#F2F3F5;color:#111214">Support with $100</a>
+        </div>
+      </article>
+  </section>
+  <section style="max-width:1240px;margin:0 auto;padding:0 24px 40px">
+    <div style="display:grid;grid-template-columns:{{ donateCols }};gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(24px,4vw,48px);background:#E6E7E9;color:#111214;border-radius:14px">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.22em;color:#5E6168">MORE THAN IN-GAME PERKS</span>
+        <h2 style="margin:0;font-family:'Montserrat',system-ui,sans-serif;font-size:clamp(30px,3.6vw,46px);font-weight:800;letter-spacing:-0.035em;line-height:1.02;text-wrap:balance">Your support leaves something real behind.</h2>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#3F4248;max-width:52ch;text-wrap:pretty">With every Crown of Solace donation, we also make a donation in your name to a government-approved charity. You choose where it goes, and we send you the official certificate.</p>
+        <ol style="list-style:none;margin:0;padding:0">
+          <li style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;padding:16px 0;border-top:1px solid rgba(17,18,20,0.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5E6168;padding-top:3px">01</span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Montserrat',system-ui,sans-serif;font-size:18px;font-weight:700;color:#111214">Donate with Crown of Solace</span><span style="font-size:15.5px;line-height:1.55;color:#3F4248;text-wrap:pretty">Use the button on the Crown of Solace tier above.</span></span></li>
+          <li style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;padding:16px 0;border-top:1px solid rgba(17,18,20,0.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5E6168;padding-top:3px">02</span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Montserrat',system-ui,sans-serif;font-size:18px;font-weight:700;color:#111214">Write your choice in the note</span><span style="font-size:15.5px;line-height:1.55;color:#3F4248;text-wrap:pretty">In the message field on Buy Me a Coffee, write <strong style="color:#111214">“Sapling”</strong> to have a tree planted, or <strong style="color:#111214">“Shelter”</strong> to send food to an animal shelter.</span></span></li>
+          <li style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;padding:16px 0;border-top:1px solid rgba(17,18,20,0.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5E6168;padding-top:3px">03</span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Montserrat',system-ui,sans-serif;font-size:18px;font-weight:700;color:#111214">Receive your certificate</span><span style="font-size:15.5px;line-height:1.55;color:#3F4248;text-wrap:pretty">We make the donation through the charity and send the certificate to you.</span></span></li>
+        </ol>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#5E6168">A small way to take responsibility for the world and for animals without a home.</p>
+      </div>
+      <figure style="margin:0;justify-self:end;align-self:stretch;display:flex;flex-direction:column;align-items:center;gap:10px;max-width:100%">
+        <div role="img" aria-label="Certified donation badge" style="position:relative;width:180px;height:230px">
+          <span style="position:absolute;top:118px;left:50%;width:44px;height:92px;margin-left:-40px;background:linear-gradient(180deg,#8E6F33,#B8944E 40%,#7A5C26);clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);transform:rotate(16deg);transform-origin:top center"></span>
+          <span style="position:absolute;top:118px;left:50%;width:44px;height:92px;margin-left:-4px;background:linear-gradient(180deg,#8E6F33,#B8944E 40%,#7A5C26);clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);transform:rotate(-16deg);transform-origin:top center"></span>
+          <span style="position:absolute;top:0;left:0;width:180px;height:180px;border-radius:50%;background:repeating-conic-gradient(#C9A75E 0 6deg,#A98839 6deg 12deg);box-shadow:0 18px 30px -16px rgba(17,18,20,0.55)"></span>
+          <span style="position:absolute;top:12px;left:12px;width:156px;height:156px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#E7CB86,#B8944E 60%,#8E6F33);box-shadow:inset 0 0 0 3px #F3E3B8,inset 0 0 0 5px #8E6F33;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center">
+            <svg viewBox="0 0 120 60" width="120" height="60" aria-hidden="true" fill="#2A2010"><g transform="translate(20 36) rotate(-18) scale(1.35)"><ellipse cx="0" cy="4" rx="6" ry="5"/><circle cx="-6" cy="-4" r="2.4"/><circle cx="-2" cy="-7" r="2.4"/><circle cx="2" cy="-7" r="2.4"/><circle cx="6" cy="-4" r="2.4"/></g><polygon points="60,2 76,26 44,26"/><polygon points="60,14 81,44 39,44"/><rect x="56" y="44" width="8" height="12"/><g transform="translate(100 36) rotate(18) scale(1.35)"><ellipse cx="0" cy="4" rx="6" ry="5"/><circle cx="-6" cy="-4" r="2.4"/><circle cx="-2" cy="-7" r="2.4"/><circle cx="2" cy="-7" r="2.4"/><circle cx="6" cy="-4" r="2.4"/></g></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:#2A2010;line-height:1.4">CERTIFIED<br>DONATION</span>
+            <span style="display:block;width:46px;height:1px;background:#5A4520"></span>
+            <span style="font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.12em;color:#2A2010">TREES · SHELTERS</span>
+          </span>
+        </div>
+        <figcaption style="font-size:13.5px;color:#5E6168;text-align:center;max-width:28ch">Crown of Solace donors receive an official certificate from the charity.</figcaption>
+        <div aria-hidden="true" style="display:flex;align-items:flex-end;justify-content:center;gap:4px;margin-top:auto;padding-top:28px"><div style="position:relative;width:115px;height:122px;flex-shrink:0"><div style="position:absolute;left:0;top:0;transform:scale(1.2);transform-origin:0 0">{{ donateArt.hCat }}</div></div><div style="position:relative;width:173px;height:202px;flex-shrink:0"><div style="position:absolute;left:0;top:0;transform:scale(1.6);transform-origin:0 0">{{ donateArt.hTree }}</div></div><div style="position:relative;width:151px;height:122px;flex-shrink:0"><div style="position:absolute;left:0;top:0;transform:scale(1.2);transform-origin:0 0">{{ donateArt.hDog }}</div></div></div>
+      </figure>
+    </div>
+  </section>
+  <section style="max-width:1240px;margin:0 auto;padding:0 24px 96px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14.5px;color:#8E9197">
+    <span>Donations go through Buy Me a Coffee.</span>
+    <a href="#/support" style="color:#D6D8DB;text-decoration:none" style-hover="color:#F2F3F5">Questions about perks? Open a ticket →</a>
+  </section>
+</main>
+</sc-if>
+
 <sc-if value="{{ isInner }}" hint-placeholder-val="{{ false }}">
 <div style="max-width:1440px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:{{ gridCols }};gap:48px;align-items:start">
   <sc-if value="{{ showSidebar }}" hint-placeholder-val="{{ true }}">
@@ -443,16 +616,20 @@ a:hover{color:#EDEDED}
             <button role="radio" aria-checked="{{ m.on }}" onClick="{{ m.pick }}" style="width:44px;height:44px;border-radius:4px;font:inherit;font-size:15.5px;cursor:pointer;font-variant-numeric:tabular-nums;border:1px solid {{ m.border }};background:{{ m.bg }};color:{{ m.color }}">{{ m.n }}</button>
           </sc-for>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:1px;background:rgba(237,237,237,0.12);border:1px solid rgba(237,237,237,0.12);border-radius:5px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:8px">
           <sc-for list="{{ calcCells }}" as="c" hint-placeholder-count="8">
-            <div style="background:#080808;padding:14px 16px;display:flex;flex-direction:column;gap:2px">
-              <span style="font-size:13.5px;color:#9C9C9C">{{ c.k }}</span>
+            <div style="background:{{ c.bg }};border:1px solid {{ c.bd }};border-radius:5px;padding:14px 16px;display:flex;flex-direction:column;gap:2px">
+              <span style="font-size:13.5px;color:{{ c.kc }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.k }}</span>
               <span style="font-family:'Montserrat',system-ui,sans-serif;font-size:26px;line-height:1.2;font-variant-numeric:tabular-nums">{{ c.v }}</span>
-              <span style="font-size:13px;color:#9C9C9C">{{ c.note }}</span>
+              <span style="font-size:13px;line-height:1.4;color:{{ c.nc }}">{{ c.note }}</span>
             </div>
           </sc-for>
         </div>
-        <p style="margin:14px 0 0;font-size:14.5px;color:#9C9C9C">{{ calcNote }} Caps are ceilings, not free pieces. Extensions come from qualifying research or an approved donation extension. Donations are not live.</p>
+        <p style="margin:14px 0 0;font-size:14.5px;color:#9C9C9C">{{ calcNote }} Caps are ceilings, not free pieces.</p>
+        <div style="margin-top:14px;padding:14px 16px;border:1px solid rgba(194,160,90,0.6);background:rgba(194,160,90,0.08);border-radius:6px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+          <span style="font-size:15px;line-height:1.55;color:#EDEDED;max-width:62ch"><strong style="color:#C2A05A;font-weight:600">Need more room?</strong> Donator tiers add extra building pieces and placeables on top of these caps, from +300 pieces and +50 placeables.</span>
+          <a href="#/donate" style="flex-shrink:0;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:6px;background:#C2A05A;color:#080808;font-weight:600;font-size:14.5px;text-decoration:none" style-hover="background:#EDEDED;color:#080808">See Donator tiers →</a>
+        </div>
       </div>
     </sc-if>
 
@@ -1401,6 +1578,7 @@ a:hover{color:#EDEDED}
     <nav aria-label="Footer" style="display:flex;flex-direction:column;gap:6px">
       <a href="#/rules" style="color:#D2D2D2;text-decoration:none" style-hover="color:#EDEDED">Rules</a>
       <a href="#/support" style="color:#D2D2D2;text-decoration:none" style-hover="color:#EDEDED">Support</a>
+      <a href="#/donate" style="color:#D2D2D2;text-decoration:none" style-hover="color:#EDEDED">Donate</a>
       <a href="#/updates" style="color:#D2D2D2;text-decoration:none" style-hover="color:#EDEDED">Updates</a>
       <a href="#/privacy" style="color:#D2D2D2;text-decoration:none" style-hover="color:#EDEDED">Privacy</a>
     </nav>
@@ -1428,6 +1606,8 @@ a:hover{color:#EDEDED}
     </div>
   </div>
 </sc-if>
+
+{{ coffeeEl }}
 
 <sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
   <div role="status" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:120;padding:10px 16px;background:#EDEDED;color:#080808;border-radius:5px;font-size:15px;font-weight:500">{{ toast }}</div>
@@ -1580,6 +1760,115 @@ class Component extends DCLogic {
     if (this._tocKey !== key) { this._tocKey = key; this.setState({ domToc: { route: r, items } }); }
   }
   componentDidUpdate() { this.syncDomToc(); }
+  buildDonateArt() {
+    if (this._dart) return this._dart;
+    const h = React.createElement, P = 6, css = [];
+    const pal = (u) => ({ O: 'oklch(0.88 0.11 ' + u + ')', F: 'oklch(0.88 0.11 ' + u + ' / 0.16)', D: 'oklch(0.88 0.11 ' + u + ' / 0.6)', W: 'oklch(0.98 0.03 ' + u + ')' });
+    const scene = (id, W, H, u, frames, seq, slot, extra, lite) => {
+      const c = lite ? { O: '#111214', F: 'rgba(17,18,20,0.1)', D: 'rgba(17,18,20,0.6)', W: '#111214' } : pal(u), L = seq.length, T = (L * slot).toFixed(2) + 's';
+      const layers = frames.map((parts, k) => {
+        const g = {};
+        parts.forEach(([m, ox, oy]) => m.forEach((row, y) => row.split('').forEach((ch, x) => { if (ch !== '.') g[(x + ox) + ',' + (y + oy)] = ch; })));
+        const sh = Object.keys(g).map(p => { const xy = p.split(','); return ((+xy[0] + 1) * P) + 'px ' + ((+xy[1] + 1) * P) + 'px 0 0 ' + c[g[p]]; }).join(',');
+        let kf = ''; seq.forEach((s, i) => { kf += (i * 100 / L).toFixed(3) + '%{opacity:' + (s === k ? 1 : 0) + '}'; });
+        css.push('@keyframes ' + id + 'f' + k + '{' + kf + '100%{opacity:' + (seq[0] === k ? 1 : 0) + '}}');
+        return h('span', { key: k, style: { position: 'absolute', left: -P, top: -P, width: P, height: P, boxShadow: sh, opacity: seq[0] === k ? 1 : 0, animation: id + 'f' + k + ' ' + T + ' steps(1,end) infinite' } });
+      });
+      return h('div', { 'aria-hidden': 'true', style: { position: 'relative', width: W * P, height: H * P, maxWidth: '100%', filter: lite ? 'none' : 'drop-shadow(0 0 6px oklch(0.88 0.11 ' + u + ' / 0.45))', animation: lite ? 'none' : 'cupFlicker 7s linear infinite' } },
+        ...layers, ...(extra || []).map((e, i) => h('span', { key: 'x' + i, style: Object.assign({ position: 'absolute', width: P, height: P, background: c.W, opacity: 0 }, e) })),
+        lite ? null : h('span', { key: 'scan', style: { position: 'absolute', inset: 0, background: 'repeating-linear-gradient(0deg, rgba(14,15,17,0.4) 0 2px, transparent 2px 6px)', animation: 'cupScan 1.2s linear infinite', pointerEvents: 'none' } }));
+    };
+    const steam = (xs, y, d) => xs.flatMap((x, i) => [0, 1].map(k => ({ left: (x + k) * P, top: (y - k) * P, animation: 'cupSteam 2.7s ease-out ' + (i * 0.9 + (d || 0)) + 's infinite' })));
+    // Patron: artistic cup with OK sign
+    const big = ['OOOOOOOOOOOOOO....', 'ODDDDDDDDDDDDO....', 'OFFFFFFFFFFFFOOOO.', 'OFFFFFFFFFFFFO..O.', 'OFFFFFFFFFFFFO..O.', 'OFFFFFFFFFFFFO..O.', 'OFFFFFFFFFFFFOOOO.', 'OFFFFFFFFFFFFO....', 'OFFFFFFFFFFFFO....', '.OFFFFFFFFFFO.....', '..OOOOOOOOOO......'];
+    const saucer = ['OOOOOOOOOOOOOOOOOOOO', '.DDDDDDDDDDDDDDDDDD.'];
+    const base = [[big, 9, 7], [saucer, 6, 18], [['D', 'D', 'D', 'D'], 20, 9]];
+    const eyes = [['W....W', 'W....W'], 13, 10], blink = [['WW....WW'], 12, 11], wink = [['W.....', 'W....WW'], 13, 10];
+    const smile = [['W....W', '.WWWW.'], 13, 13], grin = [['WWWWWW', '.WWWW.'], 13, 13];
+    const armDown = [['..O', '.O.', '.O.', 'OO.'], 6, 12], armUp = [['O..', '.O.', '..O'], 6, 9];
+    const hand = [['...O.O.O', '...O.O.O', '..OOOOOO', 'OO.OOOOO', 'O.OOOOO.', 'OO.OOO..', '..OOO...'], 1, 3];
+    const spark = [['.W.', 'WDW', '.W.'], 24, 3];
+    const coffee = scene('dnc', 30, 21, 205, [
+      [...base, eyes, smile, armDown], [...base, eyes, smile, armUp, hand], [...base, wink, grin, armUp, hand, spark], [...base, blink, smile, armDown]
+    ], [0, 0, 0, 3, 0, 0, 1, 2, 2, 2, 2, 1, 0, 0], 0.32, steam([12, 15, 18], 5));
+    // shared small cup
+    const cupS = ['OOOOOOOOOOO...', 'ODDDDDDDDDO...', 'OFFFFFFFFFOOO.', 'OFFFFFFFFFO..O', 'OFFFFFFFFFO..O', 'OFFFFFFFFFO..O', 'OFFFFFFFFFOOO.', 'OFFFFFFFFFO...', 'OFFFFFFFFFO...', '.OFFFFFFFO....', '..OOOOOOO.....'];
+    const cup = (cx, cy, face, arm) => {
+      const p = [[cupS, cx, cy], [['W.....W', '.WWWWW.'], cx + 2, cy + 7]];
+      p.push(face === 'L' ? [['W...W.', 'W...W.'], cx + 2, cy + 4] : face === 'W' ? [['.W.....', '.W...WW'], cx + 2, cy + 4] : [['.W...W', '.W...W'], cx + 2, cy + 4]);
+      if (arm === 'up') p.push([['O.', '.O'], cx - 2, cy + 3]); else if (arm === 'down') p.push([['.O', 'O.'], cx - 2, cy + 6]);
+      return p;
+    };
+    // Keeper: dog + cup playing ball
+    const dBody = [['.OOOOOOOOOFFFO', 'OFFFFFFFFFFFFO', 'OFFFFFFFFFFFFO', 'OFFFFFFFFFFFFO', 'OFFOOOOOOOFFFO', 'OFO.......OFO.', 'OO........OOO.'], 2, 9];
+    const dSide = [['.OO......', 'OFFO.....', 'OFFFOOOO.', 'OFFFFWFFO', 'OFFFFFFFW', '.OFFFFOOO', '..OFFO...'], 10, 2];
+    const dFront = [['OO.....OO', 'OFO...OFO', 'OFOOOOOFO', 'OFWFFFWFO', 'OFFFWFFFO', '.OFFDFFO.', '..OOOOO..'], 10, 2];
+    const tUp = [['O.', 'O.', '.O', '.O'], 0, 5], tDn = [['.O', 'O.', 'O.'], 0, 9];
+    const ball = (x, y) => [['WW', 'WW'], x, y];
+    const dog = scene('dnd', 38, 17, 155, [
+      [dBody, tUp, dSide, ...cup(24, 5, 'L', 'down'), ball(19, 5)],
+      [dBody, tDn, dSide, ...cup(24, 4, 'L', 'down'), ball(20, 2)],
+      [dBody, tUp, dSide, ...cup(24, 5, 'L', 'up'), ball(22, 1)],
+      [dBody, tDn, dSide, ...cup(24, 4, 'L', 'up'), ball(22, 4)],
+      [dBody, tUp, dFront, ...cup(24, 5, 'F'), ball(20, 14)],
+      [dBody, tDn, dFront, ...cup(24, 5, 'F'), ball(20, 14)],
+      [dBody, tUp, dFront, ...cup(24, 5, 'W'), ball(20, 14)]
+    ], [0, 1, 2, 3, 2, 1, 0, 1, 2, 3, 2, 1, 4, 5, 4, 5, 6, 6, 5, 4], 0.2, steam([26, 30], 3));
+    // Crown: cat + cup with toy wand
+    const cBody = [['....OFFO..', '..OOFFFFO.', '.OFFFFFFFO', 'OFFFFFFFFO', 'OFFFFFFFFO', 'OFFFFFFFFO', 'OFFFFFFFFO', 'OFFOOOOFFO', 'OOO....OOO'], 3, 7];
+    const cSide = [['O...O..', 'OOOOOO.', 'OFFFFFO', 'OFFFWFO', 'OFFFFFW', '.OOFFO.'], 7, 1];
+    const cFront = [['O.....O', 'OO...OO', 'OFOOOFO', 'OWFFFWO', 'OFFWFFO', '.OOOOO.'], 7, 1];
+    const kA = [['..O', '.O.', 'O..', 'O..', '.OO'], 0, 8], kB = [['O..', 'O..', '.O.', '..O'], 0, 9];
+    const paw = [['..O', '.O.', 'O..'], 13, 6];
+    const wand = [['O......', '.D.....', '..D....', '...D...', '....D..', '.....O.', '......O'], 20, 3];
+    const toyL = [['...D', '..D.', 'OW..', 'WO..'], 16, 4], toyR = [['.D', '.D', 'OW', 'WO'], 19, 4];
+    const cat = scene('dnk', 41, 17, 300, [
+      [cBody, kA, cSide, wand, toyR, ...cup(27, 5, 'L')],
+      [cBody, kB, cSide, paw, wand, toyL, ...cup(27, 5, 'L')],
+      [cBody, kA, cFront, wand, toyR, ...cup(27, 5, 'F')],
+      [cBody, kB, cFront, wand, toyR, ...cup(27, 5, 'W')]
+    ], [0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 2, 2, 2, 3, 2, 2], 0.25, steam([29, 33], 3));
+    const mini = scene('dnm', 18, 15, 60, [[...cup(2, 4, 'F')], [...cup(2, 3, 'F')], [...cup(2, 4, 'W')]], [0, 1, 0, 1, 0, 0, 2, 2, 0, 1], 0.3, steam([4, 8], 2));
+    const cBlink = [['O.....O', 'OO...OO', 'OFOOOFO', 'OFFFFFO', 'OFFWFFO', '.OOOOO.'], 7, 1];
+    const hCat = scene('dnhc', 16, 17, 300, [[cBody, kA, cSide], [cBody, kB, cSide], [cBody, kA, cFront], [cBody, kB, cBlink]], [0, 1, 0, 1, 0, 1, 2, 2, 3, 2, 2, 0], 0.32, null, true);
+    const hDog = scene('dnhd', 21, 17, 155, [[dBody, tUp, dSide], [dBody, tDn, dSide], [dBody, tUp, dFront], [dBody, tDn, dFront]], [0, 1, 0, 1, 0, 1, 2, 3, 2, 3, 2, 3], 0.22, null, true);
+    const crown = ['.....OOOOO......', '...OOFFFFFOO....', '..OFFFFFFFFFO...', '.OFFFFDFFFFFFO..', '.OFFFFFFFFDFFO..', 'OFFDFFFFFFFFFFO.', 'OFFFFFFFFFFFDFO.', '.OFFFFFFFFFFFO..', '..OOFFFFFFFOO...', '....OOOOOOO.....'];
+    const trunk = [['OFO', 'OFO', 'OFO', 'OFO', 'OFO', 'OFO', 'OFO', 'OFO', 'OFO', 'OFO'], 7, 10], ground = [['..OOOOOOOOOOOO..'], 1, 20];
+    const leaf = (x, y) => [['W'], x, y];
+    const hTree = scene('dnht', 18, 21, 120, [[[crown, 1, 0], trunk, ground], [[crown, 2, 0], trunk, ground, leaf(15, 8)], [[crown, 1, 0], trunk, ground, leaf(15, 11)], [[crown, 0, 0], trunk, ground, leaf(16, 13)]], [0, 1, 2, 3, 0, 0, 1, 0, 0], 0.45, null, true);
+    const mini5 = scene('dn5', 18, 15, 20, [[...cup(2, 4, 'F')], [...cup(2, 3, 'F')], [...cup(2, 4, 'W')]], [0, 0, 1, 0, 2, 2, 0, 1, 0, 0], 0.3, steam([4, 8], 2));
+    let kf = document.getElementById('dn-kf'); if (!kf) { kf = document.createElement('style'); kf.id = 'dn-kf'; document.head.appendChild(kf); } kf.textContent = css.join('\n');
+    this._dart = { coffee, dog, cat, mini, mini5, hCat, hDog, hTree };
+    return this._dart;
+  }
+  buildCoffee() {
+    if (this._coffee) return this._coffee;
+    const h = React.createElement, P = 7;
+    const map = ['CCCCCCCCCCC...', 'CLLLLLLLLLC...', 'CBBBBBBBBBCHH.', 'CBBBBBBBBBC..H', 'CBBEBBBEBBC..H', 'CBBEBBBEBBC..H', 'CBBBBBBBBBCHH.', 'CBSBBBBBSBC...', 'CBBMMMMMBBC...', '.CBBBBBBBC....', '..CCCCCCC.....'];
+    const col = { C: '#7FE3F0', H: '#7FE3F0', L: '#C2A05A', B: 'rgba(127,227,240,0.16)', E: '#E8FDFF', M: '#E8FDFF', S: '#E8FDFF' };
+    const px = [];
+    map.forEach((row, y) => row.split('').forEach((ch, x) => {
+      if (ch === '.') return;
+      const st = { position: 'absolute', left: x * P, top: y * P + 4 * P, width: P, height: P, background: col[ch], boxShadow: (ch === 'C' || ch === 'H') ? '0 0 6px rgba(127,227,240,0.7)' : 'none' };
+      if (ch === 'E') st.animation = 'cupBlink 5.5s steps(1) infinite';
+      if (ch === 'S') st.animation = 'cupSmile 11s steps(1) infinite';
+      px.push(h('span', { key: x + '-' + y, style: st }));
+      if (ch === 'E') px.push(h('span', { key: 'b' + x + '-' + y, style: { position: 'absolute', left: x * P, top: y * P + 4 * P, width: P, height: P, background: 'rgba(127,227,240,0.16)', opacity: 0, animation: 'cupLid 5.5s steps(1) infinite' } }));
+    }));
+    [[2, 0], [5, 0.9], [8, 1.8]].forEach(([x, d], i) => [0, 1].forEach(k => px.push(h('span', { key: 's' + i + k, style: { position: 'absolute', left: (x + (k ? 1 : 0)) * P, top: 2 * P - k * P, width: P, height: P, background: 'rgba(232,253,255,0.75)', opacity: 0, animation: 'cupSteam 2.7s ease-out ' + d + 's infinite' } }))));
+    const cup = h('div', { 'aria-hidden': 'true', style: { position: 'relative', width: 14 * P, height: 11 * P + 4 * P, animation: 'cupBob 3.2s ease-in-out infinite, cupFlicker 7s linear infinite', filter: 'drop-shadow(0 0 6px rgba(127,227,240,0.35))' } },
+      ...px,
+      h('span', { style: { position: 'absolute', left: -P, top: 4 * P - 5, width: 13 * P, height: 2, background: '#7FE3F0', boxShadow: '0 0 8px #7FE3F0' } }),
+      h('span', { style: { position: 'absolute', left: 0, top: 4 * P, width: 11 * P, height: 11 * P, background: 'repeating-linear-gradient(0deg, rgba(8,8,8,0.35) 0 2px, transparent 2px 7px)', animation: 'cupScan 1.2s linear infinite', pointerEvents: 'none' } }),
+      h('span', { style: { position: 'absolute', left: -10, right: 4, bottom: -10, height: 10, borderRadius: '50%', background: 'radial-gradient(ellipse, rgba(127,227,240,0.45), transparent 70%)' } }));
+    const bubble = h('span', { style: { display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: 1, textAlign: 'center', marginBottom: 2, transform: 'translateX(-10px)', textShadow: '0 0 10px rgba(127,227,240,0.55)' } },
+      h('span', { style: { fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, letterSpacing: '0.32em', color: '#BFEFF5', textTransform: 'uppercase', marginRight: '-0.32em' } }, 'Buy a'),
+      h('span', { style: { fontFamily: "'Montserrat',system-ui,sans-serif", fontSize: 26, fontWeight: 800, letterSpacing: '0.08em', color: '#E8FDFF', marginTop: 4, marginRight: '-0.08em' } }, 'COFFEE?'));
+    this._coffee = h('a', { 'data-coffee': '', href: '#/donate', 'aria-label': 'Support SOLACE: buy us a coffee', title: 'Support SOLACE',
+      style: { position: 'fixed', right: 26, bottom: 'calc(20px + 54px + 14px)', zIndex: 61, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, textDecoration: 'none', color: '#DDF8FB', opacity: 0.88, transition: 'opacity .25s' },
+      onMouseEnter: (e) => { e.currentTarget.style.opacity = '1'; }, onMouseLeave: (e) => { e.currentTarget.style.opacity = '0.88'; } }, bubble, cup);
+    return this._coffee;
+  }
   componentDidMount() {
     this.initMusic();
     setTimeout(() => this.syncDomToc(), 0);
@@ -1637,7 +1926,7 @@ class Component extends DCLogic {
     const raw = (location.hash || '#/').slice(1) || '/';
     const [p, qs] = raw.split('?');
     const s = new URLSearchParams(qs || '').get('s');
-    const route = this.ROUTES.some(r => r.p === p) ? p : '/';
+    const route = (p === '/donate' || this.ROUTES.some(r => r.p === p)) ? p : '/';
     const routeChanged = route !== this.state.route;
     this.setState({ route, s, menuOpen: false, searchOpen: false, reportOpen: false }, () => this.scrollNow(routeChanged));
   }
@@ -1725,11 +2014,13 @@ class Component extends DCLogic {
     const st = this.state, route = st.route, R = this.ROUTES.find(r => r.p === route) || this.ROUTES[0];
     const w = st.w, narrow = w < 900, wideNav = w >= 1180, rail = w >= 1340;
     const isHome = route === '/';
-    const page = isHome ? null : this.getPage(route);
+    const isDonate = route === '/donate';
+    const page = (isHome || isDonate) ? null : this.getPage(route);
     const toc = (st.domToc && st.domToc.route === route ? st.domToc.items : page ? page.toc : []).map(t => ({ text: t.text, href: this.href(route, t.id) }));
     const labels = this.labels || {};
     const inProf = route.indexOf('/professions') === 0, inCls = route.indexOf('/classes') === 0;
     const navGroups = this.GROUPS.map(g => ({ title: g[1], items: this.ROUTES.filter(r => r.group === g[0] || (g[0] === 'systems' && inProf && r.group === 'prof') || (g[0] === 'systems' && inCls && r.group === 'cls')).sort((a, b) => (a.group === 'prof' ? 11.5 : a.group === 'cls' ? 12.5 : this.ROUTES.indexOf(a)) - (b.group === 'prof' ? 11.5 : b.group === 'cls' ? 12.5 : this.ROUTES.indexOf(b)) || this.ROUTES.indexOf(a) - this.ROUTES.indexOf(b)).map(r => { const on = r.p === route; return { pad: (r.group === 'prof' || r.group === 'cls') ? '28px' : '10px', label: r.label, href: this.href(r.p), current: on ? 'page' : undefined, color: on ? '#EDEDED' : '#9C9C9C', bg: on ? '#1A1A1A' : 'transparent', dot: on ? '#C2A05A' : 'transparent' }; }) }));
+    { const sg = navGroups.find(g => g.title === 'SYSTEMS'); if (sg) { const on = route === '/donate'; sg.items.push({ pad: '10px', label: 'Donate', href: this.href('/donate'), current: on ? 'page' : undefined, color: on ? '#EDEDED' : '#9C9C9C', bg: on ? '#1A1A1A' : 'transparent', dot: on ? '#C2A05A' : 'transparent' }); } }
     const headerNav = this.HEADER.map(n => { const on = n[1] === route || (n[1] === '/professions' && inProf) || (n[1] === '/classes' && inCls) || (n[2] && R.group === n[2] && !(n[2] === 'start' && route === '/world')); return { label: n[0], href: this.href(n[1]), color: on ? '#EDEDED' : '#9C9C9C', bg: on ? '#1A1A1A' : 'transparent' }; });
     const siblings = this.ROUTES.filter(r => R.group === 'prof' ? (r.group === 'prof' || r.p === '/professions') : R.group === 'cls' ? (r.group === 'cls' || r.p === '/classes') : r.group === R.group).map(r => { const on = r.p === route; return { label: r.label, href: this.href(r.p), color: on ? '#080808' : '#D2D2D2', bg: on ? '#EDEDED' : 'transparent' }; });
     const crumbs = [{ label: 'Home', href: '#/' }];
@@ -1761,7 +2052,7 @@ class Component extends DCLogic {
       setVolume: (e) => { if (!au) return; const v = Number(e.target.value) / 100; au.volume = v; au.muted = v === 0; this.setState({ vol: v, muted: v === 0 }, () => this.saveMusic()); },
       heroSlides: this.HERO.map((h, i) => { const on = i === st.hero; return { src: h[0], pos: h[1], label: 'Show image ' + (i + 1) + ': ' + h[2], opacity: on ? 1 : 0, scale: on ? 1.04 : 1, dot: on ? '#C2A05A' : 'rgba(237,237,237,0.35)', pick: () => { this.setState({ hero: i }); clearInterval(this.heroTimer); this.heroTimer = setInterval(() => { if (this.state.route === '/' && !document.hidden) this.setState(s => ({ hero: (s.hero + 1) % this.HERO.length })); }, 7000); } }; }),
       hs0: { opacity: st.hero === 0 ? 1 : 0, scale: st.hero === 0 ? 1.04 : 1 }, hs1: { opacity: st.hero === 1 ? 1 : 0, scale: st.hero === 1 ? 1.04 : 1 }, hs2: { opacity: st.hero === 2 ? 1 : 0, scale: st.hero === 2 ? 1.04 : 1 }, hs3: { opacity: st.hero === 3 ? 1 : 0, scale: st.hero === 3 ? 1.04 : 1 }, hs4: { opacity: st.hero === 4 ? 1 : 0, scale: st.hero === 4 ? 1.04 : 1 }, hs5: { opacity: st.hero === 5 ? 1 : 0, scale: st.hero === 5 ? 1.04 : 1 }, hs6: { opacity: st.hero === 6 ? 1 : 0, scale: st.hero === 6 ? 1.04 : 1 },
-      isHome, isInner: !isHome, narrow, wideNav, narrowNav: !wideNav, wideSearchLabel: w >= 700, xwide: w >= 1640, searchLabel: wideNav ? w >= 1400 : w >= 700,
+      isHome, isDonate, donateCols: w < 760 ? 'minmax(0,1fr)' : 'minmax(0,1fr) auto', isInner: !isHome && !isDonate, donateArt: isDonate ? this.buildDonateArt() : {}, narrow, wideNav, narrowNav: !wideNav, wideSearchLabel: w >= 700, xwide: w >= 1640, searchLabel: wideNav ? w >= 1400 : w >= 700,
       menuOpen: st.menuOpen, menuLabel: st.menuOpen ? 'Close' : 'Menu', toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       headerNav, navGroups, siblings, crumbs,
       showSidebar: !narrow, gridCols: narrow ? 'minmax(0,1fr)' : rail && toc.length > 2 ? '232px minmax(0,1fr) 210px' : '232px minmax(0,1fr)',
@@ -1777,6 +2068,7 @@ class Component extends DCLogic {
       copyReport: () => { const t = repText; const done = (ok) => { this.setState({ repCopied: ok ? 'ok' : 'fail' }); clearTimeout(this._repT); if (ok) this._repT = setTimeout(() => this.setState({ repCopied: null }), 3000); };
         const fallback = () => { try { const ta = document.createElement('textarea'); ta.value = t; ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0'; document.body.appendChild(ta); ta.focus(); ta.select(); const ok = document.execCommand('copy'); ta.remove(); done(ok); } catch (e) { done(false); } };
         if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(t).then(() => done(true), fallback); else fallback(); },
+      coffeeEl: route === '/donate' ? null : this.buildCoffee(),
       profImgEl: (pi >= 0 && PI[R.prof[0]]) ? React.createElement('img', { src: PI[R.prof[0]], alt: R.prof[0] + ' profession artwork', style: { width: 'min(100%,320px)', aspectRatio: '1 / 1', flexShrink: 0, objectFit: 'cover', borderRadius: '6px', border: '1px solid rgba(194,160,90,0.35)' } }) : null,
       clsImgEl: (R.group === 'cls' && (window.SOLACE_CLASS_IMG || {})[R.cls[0]]) ? React.createElement('img', { src: window.SOLACE_CLASS_IMG[R.cls[0]], alt: R.cls[0] + ' class artwork', style: { display: 'block', margin: '0 0 28px', width: 'min(100%,360px)', aspectRatio: '1 / 1', objectFit: 'cover', borderRadius: '6px', border: '1px solid rgba(194,160,90,0.35)' } }) : null,
       isProfDetail: pi >= 0, hasProfImg: pi >= 0 && !!PI[R.prof[0]],
@@ -1808,12 +2100,12 @@ class Component extends DCLogic {
       raidLists: this.RAID.map((g, gi) => ({ title: g[0], items: g[1].map((label, j) => { const k = 'raid:' + gi + ':' + j, on = !!st.checked[k]; return { label, on, color: on ? '#9C9C9C' : '#EDEDED', toggle: () => this.toggle(k) }; }) })),
       memberOpts: Array.from({ length: 12 }, (_, i) => { const n = i + 1, on = n === st.members; return { n, on, pick: () => this.setState({ members: n }), bg: on ? '#EDEDED' : '#080808', color: on ? '#080808' : '#EDEDED', border: on ? '#EDEDED' : 'rgba(237,237,237,0.2)' }; }),
       calcCells: [
-        { k: 'Base pieces', v: nf(caps[0]), note: '+' + nf(caps[2]) + ' max extension' },
-        { k: 'Base placeables', v: nf(caps[1]), note: '+' + nf(caps[3]) + ' max extension' },
-        { k: 'Absolute max pieces', v: nf(caps[4]), note: 'Hard ceiling' },
-        { k: 'Absolute max placeables', v: nf(caps[5]), note: 'Hard ceiling' },
-        { k: 'Mounts', v: String(st.members), note: 'One per clan member' },
-        { k: 'Pets', v: String(Math.max(1, Math.floor(st.members / 2))), note: 'One per two clan members' }
+        { k: 'Base pieces', v: nf(caps[0]), note: '+' + nf(caps[2]) + ' max extension', bg: '#080808', bd: 'rgba(237,237,237,0.12)', kc: '#9C9C9C', nc: '#9C9C9C' },
+        { k: 'Base placeables', v: nf(caps[1]), note: '+' + nf(caps[3]) + ' max extension', bg: '#080808', bd: 'rgba(237,237,237,0.12)', kc: '#9C9C9C', nc: '#9C9C9C' },
+        { k: 'Max pieces', v: nf(caps[4]), note: 'Hard ceiling', bg: '#080808', bd: 'rgba(237,237,237,0.12)', kc: '#9C9C9C', nc: '#9C9C9C' },
+        { k: 'Max placeables', v: nf(caps[5]), note: 'Hard ceiling', bg: '#080808', bd: 'rgba(237,237,237,0.12)', kc: '#9C9C9C', nc: '#9C9C9C' },
+        { k: 'Mounts', v: String(st.members), note: '1 per member', bg: '#080808', bd: 'rgba(237,237,237,0.12)', kc: '#9C9C9C', nc: '#9C9C9C' },
+        { k: 'Pets', v: String(Math.max(1, Math.floor(st.members / 2))), note: '1 per 2 members', bg: '#080808', bd: 'rgba(237,237,237,0.12)', kc: '#9C9C9C', nc: '#9C9C9C' }
       ],
       calcNote: st.members >= 5 ? 'Large clan: keep 3/4 map grid from other large bases.' : '',
       ticketOpts: this.TICKETS.map((t, i) => { const on = st.ticket === i; return { q: t[0], on, pick: () => this.setState({ ticket: i }), bg: on ? '#EDEDED' : '#080808', color: on ? '#080808' : '#EDEDED', border: on ? '#EDEDED' : 'rgba(237,237,237,0.2)' }; }),
