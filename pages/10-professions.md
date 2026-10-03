@@ -41,8 +41,13 @@ A captor who specializes in agreed enslavement RP. The Slaver breaks a consentin
 Courtiers are skilled in diplomacy, persuasion, political maneuvering, forgery, intrigue and trade. They are most effective in social situations where information, reputation and influence matter more than brute force. They also know how to bargain for a better price. A forged letter only works if the Courtier knows the character they imitate well enough to make it believable.
 
 
-## Planned daily profession activity: not yet launched
-The team discussed paid-for-by-game-currency shift RP around the Hub: Bard at tavern, Medic at treatment centre, Fighter/Bounty Hunter on city watch, Alchemist at shop, and Thief in tavern-related assignments, with a roughly one-hour RP shift concept. **This is meeting ideation, not a requirement or an extra confirmed reward beyond 10 Silver daily and 1 Gold weekly.**
+## Daily profession work
+Every profession can earn money in the Hub through the **Hub Duty** daily quest: a **30-minute** shift with RP earns **5 Silver**.
+- **City Guard Duty:** Fighter, Slaver and Thief patrol the Hub.
+- **Tavern Work:** all other professions help the tavern keeper.
+- **Medics** can also earn by offering paid healing, with the price stated before treatment.
+
+Together with the **Gem Hunt** (5 Silver Solace Gems from the special bosses, 5 Silver), daily quests pay 10 Silver. See `/economy` for full details.
 
 ### How to choose
 Pick the profession that starts scenes you will enjoy. A social character might be a Bard, Medic or Courtier; an investigative character a Bounty Hunter or Thief; someone who likes making and trading items an Alchemist or Courtier. Staff will publish switching policies, cooldowns and application limits before deployment. See `/classes` for Sorcerer, Blacksmith and Wise.
