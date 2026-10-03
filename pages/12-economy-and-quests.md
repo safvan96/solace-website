@@ -12,16 +12,16 @@ There are two daily quests. Together they give **10 Silver**.
 
 | Daily quest | Requirement | Reward |
 |---|---|---|
-| **Hub Duty** | Work a 1-hour Profession Work shift in the Hub (City Guard Duty or Tavern Work) and roleplay during it. | 5 Silver |
-| **Shard Hunt** | Collect 5 Shards by defeating the 5 special bosses. | 5 Silver |
+| **Hub Duty** | Work a 30-minute Profession Work shift in the Hub (City Guard Duty or Tavern Work) and roleplay during it. | 5 Silver |
+| **Gem Hunt** | Collect 5 Solace Gems by defeating the 5 special bosses. | 5 Silver |
 
 ### Weekly Quest requirement
-The Weekly Quest requires the player to collect **30 Shards**.
-- Shards are obtained by defeating the **5 special bosses** located around the map.
-- Players may repeatedly hunt these bosses until they have collected the required 30 Shards.
+The Weekly Quest requires the player to collect **30 Solace Gems**.
+- Solace Gems are obtained by defeating the **5 special bosses** located around the map.
+- Players may repeatedly hunt these bosses until they have collected the required 30 Solace Gems.
 
 ## Profession Work
-Profession work gives characters a way to earn money through active roleplay inside the Hub. This is the **Hub Duty** daily quest: a 1-hour shift with RP earns **5 Silver**.
+Profession work gives characters a way to earn money through active roleplay inside the Hub. This is the **Hub Duty** daily quest: a 30-minute shift with RP earns **5 Silver**.
 
 ### City Guard Duty
 The following professions may take City Guard Duty:
@@ -29,7 +29,7 @@ The following professions may take City Guard Duty:
 - Slaver
 - Thief
 
-During the shift, they patrol the Hub for 1 hour and are paid for protecting the city.
+During the shift, they patrol the Hub for 30 minutes and are paid for protecting the city.
 
 ### Tavern Work
 All other professions may work in the Hub Tavern:
@@ -39,7 +39,7 @@ All other professions may work in the Hub Tavern:
 - Alchemist
 - Courtier
 
-During the shift, they help out the tavern keeper and are free to roleplay however they like. The shift must last **1 hour**.
+During the shift, they help out the tavern keeper and are free to roleplay however they like. The shift must last **30 minutes**.
 
 ### Medic Work
 Medics may earn money by offering healing services through RP, as well as through Tavern Work.

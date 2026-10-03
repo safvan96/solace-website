@@ -17,7 +17,7 @@ The Hub is SOLACE's shared civic centre. **Player-operated markets and permitted
 ## Hub services
 - Player Market: trading and merchant NPCs under one-Thespian-per-clan policy.
 - Blacksmith sourcing: the special **Feast Ring** is offered at the Hub vendor for **1 Gold** (durability applies).
-- Profession work: City Guard Duty (Fighter, Slaver, Thief) and Tavern Work (all other professions), each a 1-hour shift with RP, plus paid healing by Medics. Rewards are on `/economy`.
+- Profession work: City Guard Duty (Fighter, Slaver, Thief) and Tavern Work (all other professions), each a 30-minute shift with RP, plus paid healing by Medics. Rewards are on `/economy`.
 - Shared social space: quiet RP, events and a meeting ground for characters of different backgrounds.
 
 ## Example
