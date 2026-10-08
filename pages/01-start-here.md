@@ -2,7 +2,7 @@
 *Your first evening shouldn't feel like homework.*
 
 ## Joining SOLACE
-1. You arrive in the OOC area. Press **Shift+R** and complete your character sheet: Sex, Race, Religion, Profession and all 5 category points.
+1. You arrive in the OOC area. Press **Shift+R** and complete your character sheet: Sex, Race, Religion, Profession and all 5 category points. Your race sets your languages; see `/languages`.
 2. Create or join a clan (playing solo? create your own one-person clan).
 3. Talk to the **Gatekeeper**. If your character is ready, you become **Verified**.
 4. Open a ticket on our Discord. Staff review your bio and consent sheet and give you the gate password.
