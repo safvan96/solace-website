@@ -415,5 +415,5 @@ Every Profession and Class page lists its starting RPR bonuses, the skill and ta
 - Dice do not create information that could not reasonably exist in the scene.
 - Staff may reduce, deny or contextualize information when a roll is technically high but the RP provides no believable basis for the requested result.
 - Profession Mastery evidence must show real, meaningful scenes rather than mechanical farming.
-- `/act name`, disguises and identity-hiding mechanics are not bypassed by Famous Bard or Unstoppable reputation recognition.
+- `/actname`, disguises and identity-hiding mechanics are not bypassed by Famous Bard or Unstoppable reputation recognition.
 

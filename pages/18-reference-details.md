@@ -4,7 +4,7 @@
 > **Release note:** This is a detailed inherited-rule annex, subject to successful implementation of the actual Conan mod setup. A source-specific item, racial feat or portal that SOLACE does not install must not be treated as available merely because the original reference mentions it. Owner-approved SOLACE overrides take precedence in case of conflict.
 
 ## Post-combat specifics
-- A downed character is **Slightly Injured** at a minimum and stays at the down location while mechanical PvP is unresolved. Do not revive or carry the character out until fighting has ended, except for a permitted mechanical return to the exact location of the body.
+- A downed character is **Awaiting Consequences** for 20 minutes and stays at the down location while mechanical PvP is unresolved. Do not revive or carry the character out until fighting has ended, except for a permitted mechanical return to the exact location of the body.
 - After fighting, the winning side may permit aided movement. Players use a suitable aid/accept-aid emote, walk rather than run, and cannot warp until **three map tiles** from the original down point under the inherited rule.
 - If a new valid incident interrupts consequence processing, a person already downed can only surrender, not join or run. Any applicable unattended timer pauses during the interruption. This must **not** be exploited as a loophole to bring late allies into the original battle.
 - No unauthorised healing from outside the winning side during consequence processing. Moderate-or-higher injury blocks abilities/spells unless the explicit ability allows limited self-healing.

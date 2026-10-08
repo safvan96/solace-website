@@ -29,7 +29,7 @@ Helps injured characters return to the world. Medics treat wounds after a fight,
 A resilient frontline character. Fighters don't hit harder; they last longer and take less lasting harm from a lost fight.
 
 ## Thief
-A Thief opens locks with a lockpick item, steals within the robbery table limits and hides behind an extra /act name. Every break-in leaves a **POI**, and at least one member of the targeted clan must be online. Their Liar’s Perfume can make everyone nearby believe a single command.
+A Thief opens locks with a lockpick item, steals within the robbery table limits and hides behind a second act name (`/actname2`). Every break-in leaves a **POI**, and at least one member of the targeted clan must be online. Their Liar’s Perfume can make everyone nearby believe a single command.
 
 ## Alchemist
 The Alchemist creates special potions with powerful temporary effects. Each potion can be crafted once per day, needs no dice roll and is a physical item that can be stored, traded or sold.

@@ -13,13 +13,13 @@ The Sorcerer is a lore-conscious custom class requiring an application and IC ri
 | Tier | Blood requirement | Unlocked power | What it does |
 |---:|---|---|---|
 | I | 1 character's blood | **Intent Reading** | Sense broadly positive/negative intent directed at the Sorcerer. |
-| II | 2 characters' blood | **Mind Control** | The target carries out one single command. |
+| II | 2 characters' blood | **Mind Control** | The target carries out one single command given within a 30-minute window. |
 | III | 3 characters' blood | **Memory Erasure** | Affect a particular target's memory of an incident, not what others know. |
 | IV | 4 characters' blood | **Invisibility** | **30 minutes** of limited invisibility. |
 | V | 5 characters' blood | **Empowerment** | An ultimate buff for self or one nearby character. |
 
-### Empowerment: meeting's unfinalized candidate
-A **2-hour** buff once per day was discussed, with approximate **+5% Strength**, **+5% Agility**, **+20 Stamina** and **+20 Health**. Transcript uncertainty around STR notation and stacking makes these **not live balance values**. Sorcery branches such as Necromancer, Demonologist, Shaman, Hexer and Diviner were floated as concepts, not approved subclasses. No automatic first-contact PK right is granted to Bounty Hunters based on suspected sorcery; this was only debated. Ritual proof, blood sourcing, cooldown, staff ticket and opt-outs all require implementation specifications.
+### Empowerment
+A **2-hour** buff for the Sorcerer or one character: **+20 max Health**, **+20 max Stamina**, **+5% Strength** and **+5% Agility** weapon damage, plus Athletics +2 and Arcana +2 on dice. Weapon-damage bonuses do not stack with Wise V.
 
 # Blacksmith
 *The person who keeps rare equipment in circulation.*

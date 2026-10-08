@@ -30,8 +30,12 @@ RP in local or whispered chat with an emote establishing what your character is 
 ## Eavesdropping and stealth
 Seeing text appear in local chat does not prove you were physically close enough to hear it. Walls and multiple doors stop ordinary hearing. Capture evidence of viable positioning if information may later matter in a dispute. When stealth is plausible and one character OOC notices another, the observer rolls perception and the hidden character responds with stealth; a person standing visibly in the open needs no discovery roll. This is an RP tool, **not dice PvP**.
 
-## /act appearance descriptions
-Use `/act` to describe visually identifiable features, especially while disguised. State clothes, build and relevant visible markers: e.g. `Scarred traveller in a sand-coloured hood`. Don't use secret character names, unexplained titles or vague descriptions to evade identification.
+## Act names (/actname)
+- `/actname short visible description`: appear under a description of what others can see, e.g. *Scarred traveller in a sand-coloured hood*.
+- Describe visible features only: clothes, build, visible marks. No secret names, unexplained titles or vague descriptions.
+- An act name can be changed **once every 5 days**.
+- Type `/actname` again to return to your real name.
+- Thieves may hold **two** act names: `/actname` for the first identity and `/actname2` for the second.
 
 ## No banned content
 No sexualized underage content, sexual content with animals, or other prohibited content under server/platform policy. A mature setting does not remove consent or platform limits. No unwanted sexual content can be imposed through a success roll or prior IC conduct. Sensitive RP boundaries are detailed on `/rules/consequences`.
