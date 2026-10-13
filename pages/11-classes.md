@@ -34,6 +34,16 @@ The Blacksmith crafts legendary fittings and the Feast Ring. No dice roll is nee
 | **Legendary Armor Fitting** | Increases Armor Points. | 2 days |
 | **Feast Ring** | Carry up to 1,000 Feast items with no weight. 1,000 uses, then it breaks. | 1 week |
 
+### Fittings and Feast Ring
+Blacksmiths turn steel into legends. Their work is applied to a weapon or armour like a kit and the upgrade is permanent. Hub price: 1 Gold each.
+
+| Icon | Item | What it does |
+|---|---|---|
+| ![Legendary Weapon Fitting](img/items/Legendary_Weapon_Fitting.png) | **Legendary Weapon Fitting** | Weapon: +9 damage and +15 armour penetration |
+| ![Legendary Spike Weapon Fitting](img/items/Legendary_Spike_Weapon_Fitting.png) | **Legendary Spike Weapon Fitting** | Weapon: +15 armour penetration |
+| ![Legendary Armor Fitting](img/items/Legendary_Armor_Fitting.png) | **Legendary Armor Fitting** | Armour: +45 armour, +3 weight |
+| ![Feast Ring](img/items/Feast_Ring.png) | **Feast Ring** | Sits in your hotbar like a feast: each use gives the feast buff. 1,000 uses, then it breaks. |
+
 # Wise
 *Faith, knowledge and divine ritual.*
 

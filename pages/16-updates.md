@@ -1,4 +1,13 @@
 # News & Rule Changes
+## v3.1: October 2026
+- Siren's Bloom is now **Siren's Bloom**; new Thief abilities Steady Hands, Bottle Siren's Bloom and Craft Lockpicks.
+- New lock system: anyone with a Rusted Lockpick can try, Sleight of Hand vs lock DC 14–24.
+- Usable items and profession supplies can be sold on the market.
+- Gem Hunt (5 Green Gems) and Weekly Hunt (30 Blue Gems) are given by Thaddeus, the Scholar.
+- Hub Duty: one 30-minute shift per day; caravans, RP calls and LFRP added to the Hub.
+- Languages are now taught in roleplay; new Lore page.
+- New rule G-11: ability results are binding.
+
 ## Draft v0.1: 30 September 2026
 SOLACE's first website content pack combines the adopted mechanical baseline with approved SOLACE decisions and the September planning meetings. **It is a drafting package, not a claim that hosting, mods, application forms or the final rulebook have launched.**
 

@@ -23,7 +23,12 @@ Your Final Skill Modifier is built from three possible sources:
 Every character receives:
 
 - **5 Category Points**
-- **35 Skill Points**
+- **20 Skill Points**
+
+### Point costs
+- **Every point costs exactly 1.** There is no increasing cost for higher values.
+- Perk points: none. Sex, Race, Religion, Profession and Starter Kit are chosen from the perk list without points.
+- When you finish your sheet, press **Save and close**. NPCs and scripts only see a saved sheet.
 
 ### Category Point Rules
 
@@ -33,7 +38,7 @@ Every character receives:
 
 ### Skill Point Rules
 
-- The player distributes **35 Skill Points** between the 16 individual RPR skills.
+- The player distributes **20 Skill Points** between the individual RPR skills.
 - A single skill may receive a maximum of **5 allocated Skill Points** during character creation.
 
 ### Profession and Class Bonuses
@@ -364,9 +369,8 @@ Every Profession and Class page lists its starting RPR bonuses, the skill and ta
 | Bard | Charm | Persuasion | **16+** |
 | Bounty Hunter | Tracking | Survival | **12–15 partial / 16+ full** |
 | Bounty Hunter | Read Lies | Insight | **16+** |
-| Thief | Lockpicking | Sleight of Hand | **16+** |
-| Thief (Lord of Thieves) | Lockpicking | Sleight of Hand | **10+** |
-| Thief | Liar's Perfume | Deception | **16+** |
+| Anyone with a Rusted Lockpick | Pick lock | Sleight of Hand | **Lock DC 14–24** (see `/professions`) |
+| Thief | Siren's Bloom | Deception | **16+** |
 | Slaver | Break Will | Intimidation | **16+** |
 | Slaver | Truth Compulsion | Insight | **16+** |
 | Slaver | Intimidation | Intimidation | **16+** |
@@ -399,7 +403,7 @@ Every Profession and Class page lists its starting RPR bonuses, the skill and ta
 | Bounty Hunter | **10 successful Bounty Hunts** | **Master Hunter**; Tracking cooldown **24h → 12h** |
 | Medic | **20 successful treatments** | **Mighty Healer**; Revitalize **2/day** |
 | Fighter | **15 valid PvP wins** | **Unstoppable** tag; public reputation recognition; Battle Ready **12h → 8h** |
-| Thief | **10 successful property robberies** | **Lord of Thieves**; Lockpicking **16+ → 10+** |
+| Thief | **10 successful property robberies** | **Lord of Thieves**; Steady Hands cooldown **6h → 4h** |
 | Alchemist | Potion sales to **30 players outside own clan** | **Master Alchemist**; each special potion **2/day** |
 | Slaver | Successfully Broken **8 characters** | **Nightmare of Slaves**; Intimidation Trigger **1 week → 2 weeks** |
 | Courtier | **15 successful Silver Tongue scenes** | **Crest of Esteem**; Silver Tongue **12h → 6h** |

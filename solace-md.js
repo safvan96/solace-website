@@ -22,31 +22,33 @@
   var linkStyle = { color: C.copper, textDecoration: 'underline', textDecorationColor: 'rgba(194,160,90,0.45)', textUnderlineOffset: '3px' };
 
   function inline(text, h, ctx, kp) {
-    var RE = /\[CONFIRM BEFORE LAUNCH:\s*([^\]]*)\]|\[([^\]]+)\]\(([^)]+)\)|\*\*(.+?)\*\*|`([^`]+)`|\*([^*\s][^*]*?)\*|\[([^\]]+)\]/g;
+    var RE = /!\[([^\]]*)\]\(([^)\s]+)\)|\[CONFIRM BEFORE LAUNCH:\s*([^\]]*)\]|\[([^\]]+)\]\(([^)]+)\)|\*\*(.+?)\*\*|`([^`]+)`|\*([^*\s][^*]*?)\*|\[([^\]]+)\]/g;
     var out = [], last = 0, m, k = 0; kp = kp || 'i';
     while ((m = RE.exec(text))) {
       if (m.index > last) out.push(text.slice(last, m.index));
       var key = kp + '-' + (k++);
-      if (m[1] !== undefined) {
+      if (m[2] !== undefined) {
+        out.push(h('img', { key: key, src: m[2], alt: m[1], loading: 'lazy', style: { width: '56px', height: '56px', objectFit: 'contain', verticalAlign: 'middle', display: 'inline-block' } }));
+      } else if (m[3] !== undefined) {
         out.push(h('span', { key: key, title: PENDING_TIP, style: { display: 'inline' } },
           h('span', { style: { fontFamily: MONO, fontSize: '0.72em', letterSpacing: '0.04em', color: C.bone, border: '1px solid rgba(194,160,90,0.6)', background: 'rgba(194,160,90,0.12)', padding: '1px 7px', borderRadius: '3px', marginRight: '6px', whiteSpace: 'nowrap', verticalAlign: '2px' } }, '◇ In development'),
-          h('span', { style: { color: C.muted, fontStyle: 'italic' } }, m[1])));
-      } else if (m[2] !== undefined) {
-        out.push(h('a', { key: key, href: toHref(m[3]), style: linkStyle }, inline(m[2], h, ctx, key)));
+          h('span', { style: { color: C.muted, fontStyle: 'italic' } }, m[3])));
       } else if (m[4] !== undefined) {
-        out.push(h('strong', { key: key, style: { color: C.bone, fontWeight: 600 } }, inline(m[4], h, ctx, key)));
-      } else if (m[5] !== undefined) {
-        var code = m[5];
+        out.push(h('a', { key: key, href: toHref(m[5]), style: linkStyle }, inline(m[4], h, ctx, key)));
+      } else if (m[6] !== undefined) {
+        out.push(h('strong', { key: key, style: { color: C.bone, fontWeight: 600 } }, inline(m[6], h, ctx, key)));
+      } else if (m[7] !== undefined) {
+        var code = m[7];
         if (ROUTE_RE.test(code) && ctx && ctx.labels) {
           var base = code.split('#')[0];
           out.push(h('a', { key: key, href: toHref(code), style: linkStyle }, (ctx.labels[base] || code) + ' →'));
         } else {
           out.push(h('code', { key: key, style: { fontFamily: MONO, fontSize: '0.86em', background: C.panel2, border: '1px solid ' + C.line, padding: '1px 6px', borderRadius: '3px', color: C.bone } }, code));
         }
-      } else if (m[6] !== undefined) {
-        out.push(h('em', { key: key, style: { fontStyle: 'italic' } }, inline(m[6], h, ctx, key)));
-      } else if (m[7] !== undefined) {
-        out.push(h('span', { key: key, title: 'Placeholder: real value not provided yet', style: { fontFamily: MONO, fontSize: '0.8em', color: C.muted, border: '1px dashed rgba(237,237,237,0.35)', padding: '1px 7px', borderRadius: '3px' } }, 'Pending · ' + m[7]));
+      } else if (m[8] !== undefined) {
+        out.push(h('em', { key: key, style: { fontStyle: 'italic' } }, inline(m[8], h, ctx, key)));
+      } else if (m[9] !== undefined) {
+        out.push(h('span', { key: key, title: 'Placeholder: real value not provided yet', style: { fontFamily: MONO, fontSize: '0.8em', color: C.muted, border: '1px dashed rgba(237,237,237,0.35)', padding: '1px 7px', borderRadius: '3px' } }, 'Pending · ' + m[9]));
       }
       last = RE.lastIndex;
     }

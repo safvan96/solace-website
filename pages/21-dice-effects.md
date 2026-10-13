@@ -5,8 +5,11 @@
 Many skills leave a lasting effect on the character they touch. While the effect lasts, the listed skills are raised or lowered automatically on every roll. The effect is shown as a status above the character and in their character sheet. It ends when its time runs out or when it is removed (for example by Wise III: Purification or by treating an injury).
 
 - Effects from rolled skills apply **only on a success**.
-- Skills that affect everyone nearby (Performance, Liar's Perfume) roll automatically for each character in range: the character's **Insight** against the caster's skill. Those who lose the roll receive the effect.
+- Skills that affect everyone nearby (Performance, Siren's Bloom) roll automatically for each character in range: the character's **Insight** against the caster's skill. Those who lose the roll receive the effect.
 - A penalty applies to **all** of that character's rolls with the listed skill, not only against the caster.
+
+## Ability messages
+When an ability works on you, the chat describes **how it feels** and offers several ways to play it. You choose how your character shows it; you do not choose whether it happened. See rule G-11 on `/rules`.
 
 ## All statuses
 | Status | Source skill | Dice changes | Duration |
@@ -19,7 +22,8 @@ Many skills leave a lasting effect on the character they touch. While the effect
 | Revitalized | Medic: Revitalize (and Mighty Healer) | Athletics +1 · Acrobatics +1 | 60 min |
 | Endurance | Fighter: Endurance | Athletics +2 | 60 min |
 | Battle Ready | Fighter: Battle Ready (and Unstoppable) | Intimidation +2 · Athletics +1 | 30 min |
-| Liar's Perfume | Thief: Liar's Perfume | Insight −3 · Perception −2 | 30 min |
+| Siren's Bloom | Thief: Siren's Bloom | Insight −3 · Perception −2 | 30 min |
+| Steady Hands | Thief: Steady Hands | Sleight of Hand +3 | 30 min |
 | Afraid | Slaver: Intimidation | Intimidation −3 · Insight −2 | 60 min |
 | Broken | Slaver: Break Will (3rd success) | Insight −3 · Intimidation −3 · Persuasion −2 | 12 hours |
 | Persuaded | Courtier: Silver Tongue (and Crest of Esteem) | Insight −2 | 30 min |
@@ -37,7 +41,7 @@ Many skills leave a lasting effect on the character they touch. While the effect
 | Moderate Injury | Injury: Give Moderate | Athletics −2 · Acrobatics −2 · Stealth −1 | 60 min |
 | Severe Injury | Injury: Give Severe | Athletics −3 · Acrobatics −3 · Stealth −2 · Perception −1 | 90 min |
 
-Healing an injury (Medic, Wise II, Fighter: Hard to Break) also removes or lowers its dice penalty. Wise III: Purification removes Charmed, Liar's Perfume, Mind Controlled, Afraid, Persuaded, Deceived and Dazed, with their dice penalties.
+Healing an injury (Medic, Wise II, Fighter: Hard to Break) also removes or lowers its dice penalty. Wise III: Purification removes Charmed, Siren's Bloom, Mind Controlled, Afraid, Persuaded, Deceived and Dazed, with their dice penalties.
 
 ## Real in-game bonuses
 These change your actual Health, Stamina and damage while the effect lasts.

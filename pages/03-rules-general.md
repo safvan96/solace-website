@@ -33,3 +33,6 @@ No exploits, scripts, dupes, deliberate lag, mesh abuse, unlawful access, altern
 
 ### G-10: Current version controls
 The published rule revision and effective date govern. Emergency platform/player-safety responses may be immediate. Permanent or material rule changes should be announced and ordinarily apply prospectively; the amendment log will state any exception.
+
+### G-11 Ability results are binding, the performance is yours
+When an ability succeeds on your character, you must play its effect: if you are frightened, your character is afraid; if you are charmed, they are more receptive. *How* your character shows it is up to you and should fit who they are. A lord may not scream and run; they might lower their voice, find an excuse to leave, or fall silent. Ignoring a successful effect is not allowed. Choosing how to express it always is.

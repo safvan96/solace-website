@@ -17,8 +17,24 @@ The Hub is SOLACE's shared civic centre. **Player-operated markets and permitted
 ## Hub services
 - Player Market: trading and merchant NPCs under one-Thespian-per-clan policy.
 - Blacksmith sourcing: the special **Feast Ring** is offered at the Hub vendor for **1 Gold** (durability applies).
-- Profession work: City Guard Duty (Fighter, Slaver, Thief) and Tavern Work (all other professions), each a 30-minute shift with RP, plus paid healing by Medics. Rewards are on `/economy`.
+- **Hub Duty:** City Guard Duty (Fighter, Slaver, Thief) or Tavern Work (all other professions), one 30-minute shift per day for 5 Silver. Details on `/economy`.
+- Paid healing by Medics.
 - Shared social space: quiet RP, events and a meeting ground for characters of different backgrounds.
+
+## Thaddeus, the Scholar
+The Governor's young scholar keeps the ledgers and the hunts running while the Governor is away. Talk to Thaddeus to receive the **Gem Hunt** and the **Weekly Hunt**; see `/economy`.
+
+## Caravans
+Caravan masters stand at eight stations: **Sunset Valley, North, South, East, West, Middlelands, Middle East and the Volcano**.
+- Talk to any caravan master, choose a destination and pay **1 Silver Coin**.
+- You arrive **Travel Weary**: for **15 minutes** you cannot start or join a fight (PvP rule: no initiating or joining a fight for 15 minutes after a warp). The status is visible above your character.
+- Caravan stations are marked on the map.
+
+## RP calls
+NPCs in the **Clinic, Arena, Auction House, Tavern and Bathhouse** let players announce a scene to everyone online (for example *"A healer is needed at Sunset Valley Clinic."*). The announcement appears in everyone's chat and on screen. Each announcement can be repeated after **10 minutes**.
+
+## Looking for Roleplay (LFRP)
+Players can describe themselves and what they are looking for on the map: who they are (e.g. *A noble of high standing*), what they offer (*I offer work and coin*), the tone (*Long-term story*) and what they seek (*A long-term slave (consent)*). Options marked **Hostile** or **consent** follow the LFRP rule: switch LFRP off when the scene turns into conflict or captivity, and never use it to find someone's hidden base.
 
 ## Example
 One character chooses to initiate PvP against a patron in the Hub. The attacker wins. They may apply an injury, but not robbery or capture. If the attacker instead loses, the NVL rule applies to **the attacker**: the patron may kill them, take them as a slave, or have them jailed in the Hub.
